@@ -2,9 +2,8 @@ name: Hansard every 5 minutes
 
 on:
   schedule:
-    - cron: '*/5 * * * *'     # GitHub Actions minimum granularity
-  # optional manual trigger for debugging:
-  workflow_dispatch: {}
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -23,15 +22,17 @@ jobs:
       KEYWORDS: "pokies,player card"
       WAIT_BEFORE_DOWNLOAD_SECONDS: "15"
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           persist-credentials: true
 
-      - uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.13"
 
-      - name: Install Playwright + email deps
+      - name: Install Playwright and email dependencies
         run: |
           python -m pip install --upgrade pip
           python -m pip install playwright yagmail
