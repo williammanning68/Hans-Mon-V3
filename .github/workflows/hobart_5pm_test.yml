@@ -1,11 +1,11 @@
 name: Hansard every 5 minutes
 
 on:
+    workflow_dispatch:
     schedule:
     - cron: "*/5 * * * *"
-  workflow_dispatch:
   
-permissions:
+  permissions:
   contents: write
 
 # prevent overlapping runs if one takes longer than 5 minutes
