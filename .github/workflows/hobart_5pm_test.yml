@@ -1,10 +1,9 @@
 name: Hansard 5pm Hobart (TEMP TEST)
 
 on:
-  # Run near 5pm Hobart in both time zones
+  workflow_dispatch: {}                 # lets you run it now
   schedule:
-    - cron: '0 7 * * *'   # AEST (UTC+10)
-    - cron: '0 6 * * *'   # AEDT (UTC+11)
+    - cron: '*/5 6-7 * * *'             # every 5 min between 06:00–07:59 UTC
 
 permissions:
   contents: write
@@ -13,7 +12,7 @@ env:
   DEFAULT_SEARCH_TERM: 'House of Assembly Tuesday 19 August 2025'
   KEYWORDS: 'pokies,player card'
   WAIT_BEFORE_DOWNLOAD_SECONDS: '15'
-  RUN_DATE: '2025-08-22'   # <-- set to TODAY in Hobart for a one-off test
+  RUN_DATE: '2025-08-22'                # set to *today* for a one-off test; remove later
 
 jobs:
   fetch:
@@ -21,15 +20,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Gate so it only runs at 5pm on the single RUN_DATE in Hobart
-      - name: Gate by Hobart date/time
+      # Only proceed at 17:00–17:05 Hobart on RUN_DATE
+      - name: Gate by Hobart date/time (17:00 ±5min)
         run: |
           export TZ=Australia/Hobart
           echo "Hobart now: $(date)"
-          if [ "$(date +%F)" != "$RUN_DATE" ]; then
+          if [ -n "${RUN_DATE:-}" ] && [ "$(date +%F)" != "$RUN_DATE" ]; then
             echo "Not the test date ($RUN_DATE). Exiting."; exit 0; fi
-          if [ "$(date +%H)" != "17" ]; then
-            echo "Not 5pm Hobart yet. Exiting."; exit 0; fi
+          H=$(date +%H); M=$(date +%M)
+          if [ "$H" -ne 17 ] || [ "$M" -gt 5 ]; then
+            echo "Outside 17:00–17:05 Hobart. Exiting."; exit 0; fi
 
       - uses: actions/setup-python@v5
         with:
