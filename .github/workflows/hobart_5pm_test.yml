@@ -1,11 +1,11 @@
 name: Hansard every 5 minutes
 
 on:
-    workflow_dispatch:
-    schedule:
+  workflow_dispatch:
+  schedule:
     - cron: "*/5 * * * *"
-  
-  permissions:
+
+permissions:
   contents: write
 
 # prevent overlapping runs if one takes longer than 5 minutes
@@ -20,7 +20,7 @@ jobs:
     env:
       DEFAULT_SEARCH_TERM: "House of Assembly Tuesday 19 August 2025"
       KEYWORDS: "pokies,player card"
-      WAIT_BEFORE_DOWNLOAD_SECONDS: "15"
+      WAIT_BEFORE_DOWNLOAD_SECONDS: "65"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
