@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v4
 
       # Only gate scheduled runs (manual runs skip the gate)
-      - name: Gate by Hobart date/time (17:00–17:30)
+      - name: Gate by Hobart date/time (17:00–18:30)
         if: ${{ github.event_name == 'schedule' }}
         run: |
           export TZ=Australia/Hobart
@@ -30,7 +30,7 @@ jobs:
             echo "Not the test date ($RUN_DATE). Exiting."; exit 0; fi
           H=$(date +%H); M=$(date +%M)
           if [ "$H" -ne 17 ] || [ "$M" -gt 30 ]; then
-            echo "Outside 17:00–17:30 Hobart. Exiting."; exit 0; fi
+            echo "Outside 17:00–18:30 Hobart. Exiting."; exit 0; fi
 
       - uses: actions/setup-python@v5
         with:
