@@ -1,9 +1,9 @@
 name: Hansard 5pm Hobart (TEMP TEST)
 
 on:
-  workflow_dispatch: {}                 # allow manual runs
+  workflow_dispatch: {}
   schedule:
-    - cron: '*/5 6-7 * * *'            # every 5 min between 06:00–07:59 UTC
+    - cron: '*/1 6-7 * * *'   # every minute 06:00–07:59 UTC (≈ 4–6pm/5–7pm Hobart depending on DST)
 
 permissions:
   contents: write
