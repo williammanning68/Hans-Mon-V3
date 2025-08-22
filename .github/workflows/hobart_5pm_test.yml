@@ -1,40 +1,37 @@
-name: Hansard 5pm Hobart (TEMP TEST)
+name: Hansard on push
 
 on:
-  workflow_dispatch: {}
-  schedule:
-    - cron: '*/1 6-7 * * *'   # every minute 06:00–07:59 UTC (≈ 4–6pm/5–7pm Hobart depending on DST)
+  push:
+    branches: ["main"]            # change if your default branch is different
+    paths-ignore:
+      - "transcripts/**"          # avoid retrigger when we commit the downloaded file
+  # (optional) keep manual trigger for debugging:
+  # workflow_dispatch: {}
 
 permissions:
   contents: write
 
+# avoid overlapping runs if you push multiple commits quickly
+concurrency:
+  group: hansard-on-push
+  cancel-in-progress: true
+
 env:
-  DEFAULT_SEARCH_TERM: 'House of Assembly Tuesday 19 August 2025'
-  KEYWORDS: 'pokies,player card'
-  WAIT_BEFORE_DOWNLOAD_SECONDS: '15'
-  RUN_DATE: '2025-08-22'               # one-off test date; remove/update later
+  DEFAULT_SEARCH_TERM: "House of Assembly Tuesday 19 August 2025"
+  KEYWORDS: "pokies,player card"
+  WAIT_BEFORE_DOWNLOAD_SECONDS: "15"
 
 jobs:
   fetch:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      # Only gate scheduled runs (manual runs skip the gate)
-      - name: Gate by Hobart date/time (17:00–18:30)
-        if: ${{ github.event_name == 'schedule' }}
-        run: |
-          export TZ=Australia/Hobart
-          echo "Hobart now: $(date)"
-          if [ -n "${RUN_DATE:-}" ] && [ "$(date +%F)" != "$RUN_DATE" ]; then
-            echo "Not the test date ($RUN_DATE). Exiting."; exit 0; fi
-          H=$(date +%H); M=$(date +%M)
-          if [ "$H" -ne 17 ] || [ "$M" -gt 30 ]; then
-            echo "Outside 17:00–18:30 Hobart. Exiting."; exit 0; fi
+        with:
+          persist-credentials: true
 
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.13'
+          python-version: "3.13"
 
       - name: Install Playwright + email deps
         run: |
@@ -45,15 +42,15 @@ jobs:
       - name: Download transcript
         env:
           WAIT_BEFORE_DOWNLOAD_SECONDS: ${{ env.WAIT_BEFORE_DOWNLOAD_SECONDS }}
-        run: |
-          python download_transcript.py "${{ env.DEFAULT_SEARCH_TERM }}"
+        run: python download_transcript.py "${{ env.DEFAULT_SEARCH_TERM }}"
 
       - name: Commit downloaded transcript
+        # add [skip ci] so this commit does not trigger the workflow again
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add transcripts/*.txt || echo 'No transcripts'
-          git commit -m "Add transcript for ${{ env.DEFAULT_SEARCH_TERM }}" || echo 'No changes'
+          git commit -m "[skip ci] Add transcript for ${{ env.DEFAULT_SEARCH_TERM }}" || echo 'No changes'
           git push
 
       - name: Validate email secrets present
