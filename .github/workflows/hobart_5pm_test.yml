@@ -1,29 +1,27 @@
-name: Hansard on push
+name: Hansard every 5 minutes
 
 on:
-  push:
-    branches: ["main"]            # change if your default branch is different
-    paths-ignore:
-      - "transcripts/**"          # avoid retrigger when we commit the downloaded file
-  # (optional) keep manual trigger for debugging:
-  # workflow_dispatch: {}
+  schedule:
+    - cron: '*/5 * * * *'     # GitHub Actions minimum granularity
+  # optional manual trigger for debugging:
+  workflow_dispatch: {}
 
 permissions:
   contents: write
 
-# avoid overlapping runs if you push multiple commits quickly
+# prevent overlapping runs if one takes longer than 5 minutes
 concurrency:
-  group: hansard-on-push
+  group: hansard-every5
   cancel-in-progress: true
-
-env:
-  DEFAULT_SEARCH_TERM: "House of Assembly Tuesday 19 August 2025"
-  KEYWORDS: "pokies,player card"
-  WAIT_BEFORE_DOWNLOAD_SECONDS: "15"
 
 jobs:
   fetch:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      DEFAULT_SEARCH_TERM: "House of Assembly Tuesday 19 August 2025"
+      KEYWORDS: "pokies,player card"
+      WAIT_BEFORE_DOWNLOAD_SECONDS: "15"
     steps:
       - uses: actions/checkout@v4
         with:
@@ -45,7 +43,7 @@ jobs:
         run: python download_transcript.py "${{ env.DEFAULT_SEARCH_TERM }}"
 
       - name: Commit downloaded transcript
-        # add [skip ci] so this commit does not trigger the workflow again
+        # schedule triggers won't retrigger on commit, but we add [skip ci] anyway
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
