@@ -21,15 +21,15 @@ jobs:
       - uses: actions/checkout@v4
 
       # Only proceed at 17:00–17:05 Hobart on RUN_DATE
-      - name: Gate by Hobart date/time (17:00 ±5min)
-        run: |
-          export TZ=Australia/Hobart
-          echo "Hobart now: $(date)"
-          if [ -n "${RUN_DATE:-}" ] && [ "$(date +%F)" != "$RUN_DATE" ]; then
-            echo "Not the test date ($RUN_DATE). Exiting."; exit 0; fi
-          H=$(date +%H); M=$(date +%M)
-          if [ "$H" -ne 17 ] || [ "$M" -gt 5 ]; then
-            echo "Outside 17:00–17:30 Hobart. Exiting."; exit 0; fi
+      - name: Gate by Hobart date/time (17:00–17:30)
+  run: |
+    export TZ=Australia/Hobart
+    echo "Hobart now: $(date)"
+    if [ -n "${RUN_DATE:-}" ] && [ "$(date +%F)" != "$RUN_DATE" ]; then
+      echo "Not the test date ($RUN_DATE). Exiting."; exit 0; fi
+    H=$(date +%H); M=$(date +%M)
+    if [ "$H" -ne 17 ] || [ "$M" -gt 30 ]; then
+      echo "Outside 17:00–17:30 Hobart. Exiting."; exit 0; fi
 
       - uses: actions/setup-python@v5
         with:
