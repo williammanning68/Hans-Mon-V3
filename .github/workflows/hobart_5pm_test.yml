@@ -1,10 +1,9 @@
 name: Hansard every 5 minutes
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron: '*/5 * * * *'     # GitHub Actions minimum granularity
-  # optional manual trigger for debugging:
-  workflow_dispatch: {}
+    - cron: '*/5 * * * *' # Run every five minutes indefinitely
 
 permissions:
   contents: write
