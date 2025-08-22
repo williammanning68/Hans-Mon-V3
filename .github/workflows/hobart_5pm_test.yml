@@ -1,9 +1,9 @@
 name: Hansard 5pm Hobart (TEMP TEST)
 
 on:
-  workflow_dispatch: {}                 # lets you run it now
+  workflow_dispatch: {}                 # allow manual runs
   schedule:
-    - cron: '*/5 6-7 * * *'             # every 5 min between 06:00–07:59 UTC
+    - cron: '*/5 6-7 * * *'            # every 5 min between 06:00–07:59 UTC
 
 permissions:
   contents: write
@@ -12,7 +12,7 @@ env:
   DEFAULT_SEARCH_TERM: 'House of Assembly Tuesday 19 August 2025'
   KEYWORDS: 'pokies,player card'
   WAIT_BEFORE_DOWNLOAD_SECONDS: '15'
-  RUN_DATE: '2025-08-22'                # set to *today* for a one-off test; remove later
+  RUN_DATE: '2025-08-22'               # one-off test date; remove/update later
 
 jobs:
   fetch:
@@ -20,16 +20,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Only proceed at 17:00–17:05 Hobart on RUN_DATE
+      # Only gate scheduled runs (manual runs skip the gate)
       - name: Gate by Hobart date/time (17:00–17:30)
-  run: |
-    export TZ=Australia/Hobart
-    echo "Hobart now: $(date)"
-    if [ -n "${RUN_DATE:-}" ] && [ "$(date +%F)" != "$RUN_DATE" ]; then
-      echo "Not the test date ($RUN_DATE). Exiting."; exit 0; fi
-    H=$(date +%H); M=$(date +%M)
-    if [ "$H" -ne 17 ] || [ "$M" -gt 30 ]; then
-      echo "Outside 17:00–17:30 Hobart. Exiting."; exit 0; fi
+        if: ${{ github.event_name == 'schedule' }}
+        run: |
+          export TZ=Australia/Hobart
+          echo "Hobart now: $(date)"
+          if [ -n "${RUN_DATE:-}" ] && [ "$(date +%F)" != "$RUN_DATE" ]; then
+            echo "Not the test date ($RUN_DATE). Exiting."; exit 0; fi
+          H=$(date +%H); M=$(date +%M)
+          if [ "$H" -ne 17 ] || [ "$M" -gt 30 ]; then
+            echo "Outside 17:00–17:30 Hobart. Exiting."; exit 0; fi
 
       - uses: actions/setup-python@v5
         with:
@@ -42,21 +43,28 @@ jobs:
           python -m playwright install chromium
 
       - name: Download transcript
-        run: python download_transcript.py "$DEFAULT_SEARCH_TERM"
+        env:
+          WAIT_BEFORE_DOWNLOAD_SECONDS: ${{ env.WAIT_BEFORE_DOWNLOAD_SECONDS }}
+        run: |
+          python download_transcript.py "${{ env.DEFAULT_SEARCH_TERM }}"
 
       - name: Commit downloaded transcript
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add transcripts/*.txt || echo 'No transcripts'
-          git commit -m "Add transcript for $DEFAULT_SEARCH_TERM" || echo 'No changes'
+          git commit -m "Add transcript for ${{ env.DEFAULT_SEARCH_TERM }}" || echo 'No changes'
           git push
 
       - name: Validate email secrets present
+        env:
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+          EMAIL_TO:   ${{ secrets.EMAIL_TO }}
         run: |
-          test -n "${{ secrets.EMAIL_USER }}" || (echo "EMAIL_USER missing" && exit 1)
-          test -n "${{ secrets.EMAIL_PASS }}" || (echo "EMAIL_PASS missing" && exit 1)
-          test -n "${{ secrets.EMAIL_TO }}"   || (echo "EMAIL_TO missing" && exit 1)
+          test -n "$EMAIL_USER" || (echo "EMAIL_USER missing" && exit 1)
+          test -n "$EMAIL_PASS" || (echo "EMAIL_PASS missing" && exit 1)
+          test -n "$EMAIL_TO"   || (echo "EMAIL_TO missing" && exit 1)
           echo "Secrets are present."
 
       - name: Send email (digest + attachment)
