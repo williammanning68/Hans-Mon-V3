@@ -1,10 +1,10 @@
 name: Hansard every 5 minutes
 
 on:
-  workflow_dispatch:
-  schedule:
+    schedule:
     - cron: "*/5 * * * *"
-
+  workflow_dispatch:
+  
 permissions:
   contents: write
 
@@ -20,7 +20,7 @@ jobs:
     env:
       DEFAULT_SEARCH_TERM: "House of Assembly Tuesday 19 August 2025"
       KEYWORDS: "pokies,player card"
-      WAIT_BEFORE_DOWNLOAD_SECONDS: "65"
+      WAIT_BEFORE_DOWNLOAD_SECONDS: "15"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
