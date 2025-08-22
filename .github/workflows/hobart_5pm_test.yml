@@ -29,7 +29,7 @@ jobs:
             echo "Not the test date ($RUN_DATE). Exiting."; exit 0; fi
           H=$(date +%H); M=$(date +%M)
           if [ "$H" -ne 17 ] || [ "$M" -gt 5 ]; then
-            echo "Outside 17:00–17:05 Hobart. Exiting."; exit 0; fi
+            echo "Outside 17:00–17:30 Hobart. Exiting."; exit 0; fi
 
       - uses: actions/setup-python@v5
         with:
