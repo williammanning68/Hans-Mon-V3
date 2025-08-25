@@ -1,145 +1,203 @@
 #!/usr/bin/env python3
 """
-Email the latest downloaded Hansard transcript, plus a keyword digest.
+Send a keyword digest email for Hansard transcripts.
 
-Reads keywords from:
-  1) keywords.txt  (one per line), or
-  2) KEYWORDS env (comma-separated), else
-  3) a small default list.
+Behavior:
+- If SCAN_WINDOW_HOURS > 0, include all transcripts modified within that window.
+- Else, include only the latest transcript.
+- Loads keywords from keywords.txt (one per line; lines starting with # ignored).
+  Falls back to KEYWORDS env var (comma/newline separated).
+- Sends email with excerpts + attaches the full transcript(s).
 
-Env required (set as GitHub Actions secrets):
-  EMAIL_USER, EMAIL_PASS, EMAIL_TO
-
-Optional env:
-  PARAGRAPH_RADIUS = "0"  # include neighboring paragraphs (0 or 1)
+Env:
+  EMAIL_USER   (required)
+  EMAIL_PASS   (required)
+  EMAIL_TO     (required) comma-separated allowed
+  SMTP_HOST    (required) e.g. smtp.gmail.com
+  SMTP_PORT    (required) e.g. 587
+  KEYWORDS_FILE        (optional, default "keywords.txt")
+  KEYWORDS             (optional, fallback list if file not present)
+  SCAN_WINDOW_HOURS    (optional, e.g. "26")
+  MAX_EXCERPTS_PER_TERM (optional, default "6")
+  CONTEXT_CHARS        (optional, default "220")
 """
 
 import os
-import glob
 import re
-from datetime import datetime
+from pathlib import Path
+from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
+from typing import List, Tuple, Iterable, Dict
 
 import yagmail
 
-# -------- Settings / inputs --------
-
-EMAIL_USER = os.environ["EMAIL_USER"]
-EMAIL_PASS = os.environ["EMAIL_PASS"]
-EMAIL_TO   = os.environ["EMAIL_TO"]
-
-PARAGRAPH_RADIUS = int(os.environ.get("PARAGRAPH_RADIUS", "0"))  # 0 or 1 recommended
+ROOT = Path(__file__).parent.resolve()
+TRANSCRIPTS_DIR = ROOT / "transcripts"
+HOBART_TZ = ZoneInfo("Australia/Hobart")
 
 
-def load_keywords():
-    """Load keywords from keywords.txt, or KEYWORDS env, or defaults."""
-    if os.path.exists("keywords.txt"):
-        with open("keywords.txt", "r", encoding="utf-8", errors="ignore") as f:
-            kws = [ln.strip() for ln in f if ln.strip()]
-            if kws:
-                return kws
-    env = os.environ.get("KEYWORDS", "")
-    if env.strip():
-        return [k.strip() for k in env.split(",") if k.strip()]
-    return ["budget", "health", "education", "climate"]  # defaults
-
-
-KEYWORDS = load_keywords()
-
-
-# -------- Helpers --------
-
-def find_latest_txt():
-    """Find the newest .txt, preferring transcripts/ then repo root."""
-    candidates = []
-    candidates.extend(glob.glob("transcripts/*.txt"))
-    candidates.extend(glob.glob("*.txt"))
-    if not candidates:
-        return None
-    candidates.sort(key=lambda p: os.path.getmtime(p), reverse=True)
-    return candidates[0]
-
-
-def split_paragraphs(text: str):
-    """Split text into paragraphs by blank lines."""
-    # Handles \n and \r\n, and any amount of whitespace between paragraphs
-    return [p.strip() for p in re.split(r"\r?\n\s*\r?\n", text) if p.strip()]
-
-
-def paragraph_digest(text: str, keywords, radius=0):
+def load_keywords() -> List[Tuple[re.Pattern, str]]:
     """
-    Return (digest_text, num_matches).
-    Matches whole-word keywords (case-insensitive). Each match returns the
-    paragraph; if radius=1, includes paragraph before/after as well.
+    Load keywords from KEYWORDS_FILE (default: keywords.txt).
+    Fallback to KEYWORDS env var (comma/newline separated).
+    Returns list of (compiled_pattern, display_text).
     """
-    paras = split_paragraphs(text)
-    if not keywords:
-        return "", 0
+    file_path = Path(os.environ.get("KEYWORDS_FILE", "keywords.txt"))
+    raw_terms: List[str] = []
+    if file_path.exists():
+        for line in file_path.read_text(encoding="utf-8").splitlines():
+            s = line.strip()
+            if not s or s.startswith("#"):
+                continue
+            if (s.startswith('"') and s.endswith('"')) or (s.startswith("'") and s.endswith("'")):
+                s = s[1:-1]
+            raw_terms.append(s)
 
-    pattern = re.compile(r"\b(" + "|".join(re.escape(k) for k in keywords) + r")\b",
-                         re.IGNORECASE)
+    if not raw_terms:
+        env_val = os.environ.get("KEYWORDS", "")
+        pieces = [p.strip() for p in re.split(r"[,\n]", env_val) if p.strip()]
+        raw_terms.extend(pieces)
 
-    snippets = []
-    for i, p in enumerate(paras):
-        if pattern.search(p):
-            start = max(0, i - radius)
-            end = min(len(paras), i + radius + 1)
-            block = "\n\n".join(paras[start:end])
-            snippets.append(block)
-
-    # Deduplicate while preserving order
-    seen = set()
-    unique = []
-    for s in snippets:
-        if s not in seen:
-            unique.append(s)
-            seen.add(s)
-
-    if not unique:
-        return "No keywords matched in this transcript.", 0
-
-    body = []
-    for idx, u in enumerate(unique, 1):
-        body.append(f"🔹 Match #{idx}\n{u}")
-    return "\n\n".join(body), len(unique)
+    patterns: List[Tuple[re.Pattern, str]] = []
+    for term in raw_terms:
+        # For single words you may prefer whole-word matches:
+        # pat = re.compile(rf"\b{re.escape(term)}\b", re.IGNORECASE)
+        # Using literal substring (case-insensitive) for both words/phrases:
+        pat = re.compile(re.escape(term), re.IGNORECASE)
+        patterns.append((pat, term))
+    return patterns
 
 
-# -------- Main --------
+def pick_target_files() -> List[Path]:
+    """
+    Return a list of transcript files to include.
+    - If SCAN_WINDOW_HOURS is set (>0), include all files modified within that window.
+    - Else, return a single file: the most recently modified .txt in transcripts/.
+    """
+    TRANSCRIPTS_DIR.mkdir(exist_ok=True, parents=True)
+    files = sorted(TRANSCRIPTS_DIR.glob("*.txt"), key=lambda p: p.stat().st_mtime, reverse=True)
+    if not files:
+        return []
+
+    hours = int(os.environ.get("SCAN_WINDOW_HOURS", "0") or "0")
+    if hours > 0:
+        cutoff = datetime.now(timezone.utc) - timedelta(hours=hours)
+        selected = []
+        for p in files:
+            mtime = datetime.fromtimestamp(p.stat().st_mtime, tz=timezone.utc)
+            if mtime >= cutoff:
+                selected.append(p)
+        # Fallback to latest if nothing meets the window
+        return selected or [files[0]]
+    else:
+        return [files[0]]
+
+
+def find_excerpts(text: str, patterns: List[Tuple[re.Pattern, str]],
+                  context_chars: int = 220,
+                  max_per_term: int = 6) -> Dict[str, List[str]]:
+    """
+    For each keyword pattern, find up to max_per_term excerpts of text with
+    context_chars on either side. Returns {label: [excerpts...]}.
+    """
+    excerpts: Dict[str, List[str]] = {label: [] for (_p, label) in patterns}
+    for pat, label in patterns:
+        for m in pat.finditer(text):
+            if len(excerpts[label]) >= max_per_term:
+                break
+            start = max(0, m.start() - context_chars)
+            end = min(len(text), m.end() + context_chars)
+            chunk = text[start:end].replace("\r", "")
+            # shrink to sentence boundaries if possible
+            chunk = _tidy_chunk(chunk)
+            excerpts[label].append(chunk)
+    # remove empty keys
+    return {k: v for k, v in excerpts.items() if v}
+
+
+def _tidy_chunk(chunk: str) -> str:
+    """Trim messy edges and collapse whitespace."""
+    chunk = re.sub(r"\s+", " ", chunk).strip()
+    # Add ellipses to make context clear
+    if not chunk.startswith(('.', '“', '"', '(', '[', '‘', "'")):
+        chunk = "… " + chunk
+    if not chunk.endswith(('.', '”', '"', ')', ']', '’', "'")):
+        chunk = chunk + " …"
+    return chunk
+
+
+def build_email_body(files: List[Path], patterns: List[Tuple[re.Pattern, str]],
+                     context_chars: int, max_per_term: int) -> Tuple[str, int]:
+    """Create the email body and return (body, total_hit_count)."""
+    hobart_now = datetime.now(HOBART_TZ).strftime("%Y-%m-%d %H:%M %Z")
+    lines: List[str] = []
+    lines.append(f"Hansard keyword digest — generated {hobart_now}")
+    if patterns:
+        labels = ", ".join([lbl for (_p, lbl) in patterns])
+        lines.append(f"Keywords: {labels}")
+    lines.append("")
+
+    total_hits = 0
+
+    for fp in files:
+        text = fp.read_text(encoding="utf-8", errors="ignore")
+        excerpts = find_excerpts(text, patterns, context_chars=context_chars, max_per_term=max_per_term)
+        file_hits = sum(len(v) for v in excerpts.values())
+
+        nice_name = fp.name.replace("_", " ")
+        lines.append(f"=== {nice_name} ===")
+        if not excerpts:
+            lines.append("No keyword hits found in this file.\n")
+            continue
+
+        for label, chunks in excerpts.items():
+            lines.append(f"- {label} ({len(chunks)}):")
+            for ex in chunks:
+                lines.append(f"  • {ex}")
+        lines.append("")
+        total_hits += file_hits
+
+    if total_hits == 0:
+        lines.append("No keyword matches found. Attaching transcript(s) for reference.")
+
+    return "\n".join(lines), total_hits
+
 
 def main():
-    latest = find_latest_txt()
-    if not latest:
-        print("⚠️ No transcript .txt found (looked in transcripts/ and repo root).")
-        return
+    EMAIL_USER = os.environ["EMAIL_USER"]
+    EMAIL_PASS = os.environ["EMAIL_PASS"]
+    EMAIL_TO = os.environ["EMAIL_TO"]
+    SMTP_HOST = os.environ["SMTP_HOST"]
+    SMTP_PORT = int(os.environ["SMTP_PORT"])
 
-    with open(latest, "r", encoding="utf-8", errors="ignore") as f:
-        content = f.read()
+    patterns = load_keywords()
+    if not patterns:
+        raise SystemExit("No keywords found. Add keywords.txt or set KEYWORDS env var.")
 
-    digest, count = paragraph_digest(content, KEYWORDS, PARAGRAPH_RADIUS)
+    files = pick_target_files()
+    if not files:
+        raise SystemExit("No transcripts found in transcripts/")
 
-    # Save digest alongside the transcript (handy as artifact)
-    base = os.path.splitext(os.path.basename(latest))[0]
-    digest_file = f"digest_{base}.txt"
-    with open(digest_file, "w", encoding="utf-8") as df:
-        df.write(digest)
+    context_chars = int(os.environ.get("CONTEXT_CHARS", "220"))
+    max_per_term = int(os.environ.get("MAX_EXCERPTS_PER_TERM", "6"))
 
-    subject = f"Hansard Transcript & Digest: {os.path.basename(latest)}"
-    human_time = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
-    header = (
-        f"Time: {human_time}\n"
-        f"Keywords: {', '.join(KEYWORDS)}\n"
-        f"Matches found: {count}\n\n"
-        f"=== EXCERPTS ===\n"
-    )
+    body, total_hits = build_email_body(files, patterns, context_chars, max_per_term)
 
-    yag = yagmail.SMTP(EMAIL_USER, EMAIL_PASS)
+    # Subject line
+    titles = ", ".join([f.stem[:50] for f in files])
+    subject = f"Hansard digest ({total_hits} hits) — {titles}"
+
+    # Send
+    to_list = [addr.strip() for addr in re.split(r"[,\s]+", EMAIL_TO) if addr.strip()]
+    yag = yagmail.SMTP(user=EMAIL_USER, password=EMAIL_PASS, host=SMTP_HOST, port=SMTP_PORT, smtp_starttls=True)
+
     yag.send(
-        to=EMAIL_TO,
+        to=to_list,
         subject=subject,
-        contents=header + digest + "\n\n(Full transcript attached.)",
-        attachments=[latest]  # attach full transcript
+        contents=body,
+        attachments=[str(p) for p in files],
     )
-
-    print(f"✅ Email sent to {EMAIL_TO} with {latest} and digest ({count} matches).")
+    print("Email sent.")
 
 
 if __name__ == "__main__":
