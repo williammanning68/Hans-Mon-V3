@@ -1,18 +1,19 @@
-name: Scan new Hansard transcripts (by current year)
+name: Scan Hansard (House of Assembly)
 
 on:
-  # Run manually when you want to test
-  workflow_dispatch: {}
-  # Run daily 5pm Hobart (AEST=UTC+10 → 07:00 UTC). Adjust as needed.
   schedule:
-    - cron: "0 7 * * *"
+    # Poll twice an hour during Hobart daytime (AEST/AEDT) — adjust as you like
+    - cron: '*/30 21-08 * * *'   # 07:00–18:00 Hobart ≈ 21–08 UTC
+  workflow_dispatch: {}
 
 permissions:
   contents: write
 
-concurrency:
-  group: hansard-scan
-  cancel-in-progress: false
+env:
+  MAX_RESULTS: '10'                     # scan top 10 results
+  WAIT_BEFORE_DOWNLOAD_SECONDS: '15'    # stable wait for viewer
+  KEYWORDS: 'pokies,player card'        # your current keywords
+  PARAGRAPH_RADIUS: '1'                 # include context around hits
 
 jobs:
   scan:
@@ -20,33 +21,50 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Optional extra safety: make sure we're in Hobart daytime
+      - name: Gate by Hobart time window
+        run: |
+          export TZ=Australia/Hobart
+          HOUR=$(date +%H)
+          if [ "$HOUR" -lt 7 ] || [ "$HOUR" -gt 18 ]; then
+            echo "Outside 07:00–18:00 Hobart, exiting."; exit 0; fi
+          echo "Hobart time now: $(date)"
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-          cache: 'pip'
 
-      - name: Install Playwright + browser
+      - name: Install Playwright + email deps
         run: |
           python -m pip install --upgrade pip
           python -m pip install playwright yagmail
           python -m playwright install chromium
 
-      - name: Scan & download any new transcripts for current year
-        env:
-          WAIT_BEFORE_DOWNLOAD_SECONDS: "15"
-          MAX_PAGES: "5"
-          SEND_EMAIL_IF_NEW: "1"
-          EMAIL_USER: ${{ secrets.EMAIL_USER }}
-          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
-          EMAIL_TO:   ${{ secrets.EMAIL_TO }}
-          SMTP_HOST:  ${{ secrets.SMTP_HOST }}
-          SMTP_PORT:  ${{ secrets.SMTP_PORT }}
-        run: python download_transcript.py
+      - name: Scan & download new transcripts
+        run: python scan_and_download.py
 
-      - name: Commit new transcripts (if any)
+      - name: Commit new transcripts + state
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add transcripts || echo "No transcripts"
-          git commit -m "New transcripts (auto)" || echo "No changes"
+          git add transcripts/*.txt state/seen.json new_files.txt || echo 'Nothing new to stage'
+          git commit -m "Scan run $(date -u +%F\ %T)Z" || echo 'No changes'
           git push
+
+      - name: Validate email secrets present
+        if: hashFiles('new_files.txt') != ''  # only if we found new files
+        run: |
+          test -n "${{ secrets.EMAIL_USER }}" || (echo "EMAIL_USER missing" && exit 1)
+          test -n "${{ secrets.EMAIL_PASS }}" || (echo "EMAIL_PASS missing" && exit 1)
+          test -n "${{ secrets.EMAIL_TO }}"   || (echo "EMAIL_TO missing" && exit 1)
+          echo "Secrets are present."
+
+      - name: Send email (digest for all new files)
+        if: hashFiles('new_files.txt') != ''
+        env:
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+          EMAIL_TO:   ${{ secrets.EMAIL_TO }}
+          KEYWORDS:   ${{ env.KEYWORDS }}
+          PARAGRAPH_RADIUS: ${{ env.PARAGRAPH_RADIUS }}
+        run: python send_email_all.py
