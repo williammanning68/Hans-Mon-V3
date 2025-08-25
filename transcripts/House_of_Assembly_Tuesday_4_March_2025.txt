@@ -1,0 +1,1519 @@
+﻿
+Title: House of Assembly Tuesday 4 March 2025
+App Version: 16.0000
+AppName: Microsoft Office Word
+Author: House of Assembly
+Character Count: 102595
+Characters with Spaces Count: 123399
+Company: Parliament of Tasmania
+Creation Date: Fri, 2 May 2025 6:24:00 AM (UTC)
+Keywords: 2025
+Last Printed: Fri, 2 May 2025 6:11:00 AM (UTC)
+Last Saved Date: Sun, 4 May 2025 11:23:00 PM (UTC)
+Line Count: 2481
+Links Dirty: false
+Links Up To Date: false
+Page Count: 3
+Paragraphs Count: 707
+Revision: 3
+Scale Crop: false
+Security: 0
+Shared Document: false
+Subject: Hansard
+Template: Hansard debates
+Total Editing Time: 0
+Typist: Karen Cuzzucoli
+Word Count: 21420
+isys:SubType: Word 2007
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	PARLIAMENT OF TASMANIA
+	
+	
+	
+	
+	HOUSE OF ASSEMBLY
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	REPORT OF DEBATES
+	
+	
+	
+	
+	
+	
+	
+	Tuesday 4 March 2025
+	
+	
+	
+	
+	
+	
+	
+	
+	REVISED EDITION
+	
+	
+		
+Contents
+	 <LINK> MESSAGE FROM THE GOVERNOR	1
+	 <LINK> Member for Lyons - Ms White - Resignation	1
+	 <LINK> LEAVE OF ABSENCE	1
+	 <LINK> Minister for Infrastructure - Mr Vincent MLC	1
+	 <LINK> Minister for Children and Youth - Mr Jaensch MP	1
+	 <LINK> STATEMENT BY LEADER OF THE OPPOSITION	2
+	 <LINK> Opposition Shadow Ministry Arrangements	2
+	 <LINK> QUESTIONS	2
+	 <LINK> Budget Deficit	2
+	 <LINK> Supplementary Question	3
+	 <LINK> Budget Deficit - Premier's Responsibility	4
+	 <LINK> Supplementary Question	5
+	 <LINK> Integrity Commission - Reform	6
+	 <LINK> Supplementary Question	7
+	 <LINK> Recognition of Visitors	7
+	 <LINK> Health - Public Maternity Hospital - Re-Establishment	8
+	 <LINK> Integrity Commission - Review	9
+	 <LINK> Supplementary Question	10
+	 <LINK> Budget Deficit - Public Service Hiring Freeze	11
+	 <LINK> Supplementary Question	12
+	 <LINK> Budget Deficit - Public Service Hiring Freeze	12
+	 <LINK> Supplementary Question	13
+	 <LINK> Spirit of Tasmania V - Leasing Options	15
+	 <LINK> State Service - Non-Essential Jobs - Scrutiny	15
+	 <LINK> Integrity Commission - Investigations into Members of Parliament	17
+	 <LINK> Supplementary Question	17
+	 <LINK> State Service - Hiring Freeze	18
+	 <LINK> Salmon Industry - Disease Outbreak	19
+	 <LINK> Midwives - Caseload Midwifery Industrial Agreement 2019	20
+	 <LINK> Spirit of Tasmania IV - Leasing Proposal	20
+	 <LINK> Supplementary Question	21
+	 <LINK> Spirit of Tasmania Vessels - Cost of Fit-out using Fly-in Fly-out Workers	22
+	 <LINK> Salmon Industry - Fish Deaths and Pollution	23
+	 <LINK> Supplementary Question	25
+	 <LINK> Spirit of Tasmania IV – Tabling of Potential Lease Documents	26
+	 <LINK> ANSWERS TO QUESTIONS	27
+	 <LINK> Midwives - Caseload Midwifery Industrial Agreement 2019	27
+	 <LINK> Spirit of Tasmania Vessels - Cost of Fit-out using Fly-in Fly-out Workers	27
+	 <LINK> CONSTITUENCY QUESTIONS	27
+	 <LINK> Foxglove - Funding for Eradication	27
+	 <LINK> Macquarie Point - Fuel and Sewerage Pipeline	28
+	 <LINK> Launceston CBD - Street Crime	28
+	 <LINK> Franklin Electorate - Public Transport Management	28
+	 <LINK> Ben Lomond - Infrastructure Works	29
+	 <LINK> PETITION	29
+	 <LINK> Meat Processing in Tasmania	29
+	 <LINK> RESPONSES TO PETITIONS	29
+	 <LINK> No. 15 - Lewisham Foreshore - Access to Okines Beach	29
+	 <LINK> No. 10 - TASC Student Advisory Board	29
+	 <LINK> QUESTIONS ON NOTICE - ANSWERS	29
+	 <LINK> No. 36 - Three Capes Track and Overland Track - Income/Expenses	29
+	 <LINK> No. 41 - Energy Sector - Climate Change Mitigation	30
+	 <LINK> No. 26 - Scatter Radiation - Health Worker Safety	30
+	 <LINK> MESSAGES FROM THE GOVERNOR	30
+	 <LINK> Assent to Bills	30
+	 <LINK> Appropriation (Supplementary Appropriation 2024-25)  Bill 2025 (No. 1)	31
+	 <LINK> APPROPRIATION (SUPPLEMENTARY APPROPRIATION 2024-25) BILL 2025 (No. 1)	31
+	 <LINK> First Reading	31
+	 <LINK> GAMING CONTROL AMENDMENT (DEALING WITH STOLEN MONEY) BILL 2025 (No. 2)	31
+	 <LINK> First Reading	31
+	 <LINK> MOTION	31
+	 <LINK> Committee Membership	31
+	 <LINK> MATTER OF PUBLIC IMPORTANCE	32
+	 <LINK> Debt and Deficit	32
+	 <LINK> SUSPENSION OF SITTING	42
+	 <LINK> PREMIER'S ADDRESS	42
+	 <LINK> ADJOURNMENT	48
+	 <LINK> Appendix 1	49
+	 <LINK> Appendix 2	51
+	 <LINK> Appendix 3	53
+	 <LINK> Appendix 4	57
+	 <LINK> Appendix 5	61
+
+Tuesday 4 March 2025
+
+The Speaker, Ms O'Byrne, took the Chair at 10.00 a.m., acknowledged the Traditional People, and read Prayers.
+
+
+ [Bookmark: _Hlk191978113] MESSAGE FROM THE GOVERNOR
+
+Member for Lyons - Ms White - Resignation
+
+The SPEAKER - Honourable members, I wish to advise the House that I have received the following correspondence from Her Excellency the Governor.
+
+Dear Speaker
+
+I have received a letter dated 12 February 2025 from Ms Rebecca White MP tendering her resignation as a member for Lyons in the House of Assembly. 
+
+I have instructed the Electoral Commission to proceed in accordance with the provisions of Part 9 in the Electoral Act of 2004.
+
+Your sincerely,
+Barbara Baker,
+Governor
+
+
+LEAVE OF ABSENCE
+
+Minister for Infrastructure - Mr Vincent MLC
+Minister for Children and Youth - Mr Jaensch MP
+
+Mr ROCKLIFF (Braddon - Premier) - Honourable Speaker, I advise the House that Mr Vincent MLC is absent from Question Time today. I will take questions in relation to his portfolio areas.
+
+Mr Jaensch is also absent from the Chamber this week. I convey our condolences to Roger on the loss of his father. Having had a lengthy conversation with him last evening, he very much appreciates the support and the reaching out of members of the parliament right across the Chamber in recent times. 
+
+Roger's acting arrangements will be: Minister for Finance, Mr Barnett; Minister for Children and Youth, Ms Ogilvie; Minister for Mental Health and Wellbeing, Mrs Petrusma; and Minister for Community Services, Ms Palmer. 
+
+
+STATEMENT BY LEADER OF THE OPPOSITION
+
+Opposition Shadow Ministry Arrangements
+
+Mr WINTER (Franklin - Leader of the Opposition) - Honourable Speaker, I inform the House that following the resignation of the member for Lyons, Rebecca White, I have made the following changes to the shadow ministry. 
+
+The member for Clark, Ella Haddad, has taken on the role of shadow attorney-general and shadow minister for justice. 
+
+The member for Franklin, Meg Brown, has taken on the role of shadow minister for community services.
+
+
+QUESTIONS
+
+Budget Deficit
+
+Mr WINTER question to PREMIER, Mr ROCKLIFF
+
+[10.04 a.m.]
+There was zero net debt when you came into office, not a cent. The fact that you cannot manage money means Tasmania will soon have more than $10 billion worth of debt. Every year Tasmanians will be required to find $500 million to fund interest repayments - nearly enough to double the number of teachers in Tasmania and completely abolish payroll tax. If you cannot manage the budget, how can you lead our state? Do you accept responsibility for this budget mess?
+
+ANSWER
+
+Welcome back. I saw the TikTok, or whatever it was, a few moments ago, which was an interesting start to what are very serious challenges we have for the State of Tasmania.
+
+Honourable Speaker, regarding the member's question about debt, that is why we have a sensible pathway to surplus. That is why one of the challenges with the economy we inherited - and we inherited a number of challenges in 2014 - was that our unemployment rate was over 8 per cent. We have halved that. We have created - and through the good work of the Tasmanian business community and others - over 40,000 more jobs since that time.
+
+We were feeling the effects of brutal cuts to the public service. Not thought through. Ideas like closing schools. Ideas and actions such as sacking nurses and putting hospital beds in storage, Mr Willie.
+
+Members interjecting.
+
+The SPEAKER - The question is about the pathway to budget management. There is a pathway to outside if people want it.
+
+Mr ROCKLIFF - That is why we said during the election that in our fiscal strategy we would take the public service back to 2022 levels. That is why, when it comes to our budget - 
+
+Mr Winter - Your plan is to undo your own damage?
+
+The SPEAKER - Members on my left.
+
+Mr ROCKLIFF - we mentioned that reduction in terms of 5 per cent or 6 per cent of the public service, and that is why it is named in the RER (Revised Estimates Report) as well. That is why we need to take a measured approach to reducing the numbers in our public service by about 2500. I have been very transparent about this all the way. There are no surprises here. 
+
+What is important is that we keep the momentum in the economy, where people are continuing to invest and be confident about Tasmania. That is why I was with key stakeholders for the team Tasmania approach yesterday. Irrespective of who governs in Canberra -
+
+Members interjecting.
+
+The SPEAKER - It would be nice to be able to hear the Premier. Thank you.
+
+Mr ROCKLIFF - After the federal election, irrespective of who governs Canberra, whether that be Labor or the coalition, we have put forward as a government, along with key stakeholders, 11 key priorities that we want the federal government and political parties to commit to, all about adding value to what we are already doing to get that investment and more investment into Tasmania so the economy can grow, more people can be employed, and we can fund those essential services. What we announced when it comes to the right-size public service is actually delivering better services: the right-size public service that we can afford.
+
+The SPEAKER - The Premier's time for answering the question has expired. 
+
+Supplementary Question
+
+Mr WINTER - A supplementary question, Speaker? 
+
+The SPEAKER - I will hear the supplementary, but I think the answer was relevant to the question.
+
+Mr WINTER - The question that I particularly wanted an answer to was: does the Premier accept responsibility for the state of the budget, given that he has been the Premier for three years and in this government for 11?
+
+The SPEAKER - I am not going to allow the supplementary because the question, when you got to it after the preamble, was actually: if you cannot manage the budget, how do you lead the state? The Premier addressed that budget question. Thank you. I will call on the second question, leader.
+
+
+Budget Deficit - Premier's Responsibility
+
+Mr WINTER question to PREMIER, Mr ROCKLIFF 
+
+[10.09 a.m.]
+Over the parliamentary break, it was revealed that your minority government blew the state budget by $500 million just this year. The fact that you cannot manage money means that Tasmania now has a budget deficit four times worse than at the height of COVID, when money was basically being shovelled out the door. Even worse, this happened while you received more GST and other revenue than you expected, yet you spent new revenue 11 times over. Do you accept responsibility for this budget mess?
+
+Members interjecting.
+
+The SPEAKER - If Mr Willie and Mr Abetz would like to answer the questions then they have an opportunity to do so in conversation outside. I know it is day one, but how about we call the Premier to answer the question.
+
+Mr Abetz - Good call.
+
+Mr ROCKLIFF - Thank you very much. Right answer, Eric. I take responsibility for investing through really challenging times. I take responsibility as the premier of the day, with the cabinet of the day, and the government of the day, for investing in community organisations and essential health services, to keep people alive, well, and in work. I did not hear any complaints on that side, apart from, 'We should be spending more money,' during those very challenging times. I take responsibility for ensuring that we are investing in the commission of inquiry recommendations for keeping our young people and children safe.
+
+Members interjecting.
+
+The SPEAKER - Members on my left.
+
+Mr ROCKLIFF - The member refers to the RER, of which $345 million, if my memory serves me correctly, was related to Health.
+
+Mr Willie - You did not account for it in the other years
+
+The SPEAKER - Shadow treasurer.
+
+Mr ROCKLIFF - When you talk about shovelling money out the door, I really believe that is protecting people and looking after people who are in need, when it comes to our health system. I hear those opposite talking about need for more public services every second day and every day after that Mr Willie is out complaining about the debt but with no solutions to fix it. We are working through some very challenging circumstances, we are plotting a pathway to surplus -
+
+Members interjecting.
+
+The SPEAKER - Members on my left. The Premier is actually answering the question from the Leader of the Opposition, so let it be heard.
+Mr ROCKLIFF - plotting a pathway to surplus in a very measured way. We are not going to do the Labor way, which is raising taxes and cutting services, therefore undermining -
+
+Members interjecting.
+
+The SPEAKER - Alright, the House can settle down. There are 20 seconds left, Premier.
+
+Mr ROCKLIFF - We are not going to do the Labor way because the Labor-Greens way did not work in 2011, where you not only took the economy into recession, but cut nurses -
+
+The SPEAKER - The Premier's time for answering the question has expired. 
+
+Supplementary Question
+
+Mr WINTER - A supplementary question, Speaker?
+
+The SPEAKER - I will hear the supplementary.
+
+Mr WINTER - The question was: do you accept responsibility for this budget mess? I have not heard the Premier answer that question directly.
+
+The SPEAKER - I thought the Premier said yes, but then he did go on to clarify that. Did you wish to add to that at all?
+
+Members interjecting.
+
+The SPEAKER - Thank you, if I am going to call on supplementary questions, the member for Bass will be silent.
+
+Mr ROCKLIFF - To put it into context, I take responsibility for ensuring that we have a sustainable budget moving forward, given the exceptional need for investment in public services through the commission of inquiry and the pandemic. I take responsibility for that as leader of the government, as I take responsibility for ensuring we have the right-size public service delivering better services for our community.
+
+I am not alone. Every other state around Australia is facing challenges with the investments that needed to be made during the pandemic and other challenges. We are all working through that at this present time. When it comes to our debt-to-economy ratio, if I can put it that way, we have similar laws -
+
+The SPEAKER - The Premier's time for answering the question has expired.
+
+
+Integrity Commission - Reform
+
+Dr WOODRUFF question to PREMIER, Mr ROCKLIFF
+
+[10.14 a.m.]
+You shamelessly used the pretence of undertaking a review of the Integrity Commission to delay reforms you already knew are needed. Dozens of recommendations from the decade-old Cox review remain outstanding.
+
+Despite saying you accepted recommendations from the commission of inquiry and the Weiss review, you pushed work on those into your review too. Now what? First, you refuse to even look at these essential reforms until your review was completed. Now, you are refusing to do the review and you have released no alternative plans. It is truly appalling.
+
+Are we to conclude that you have abandoned your efforts to reform the Integrity Commission, or will you show some integrity of your own for a change and commit to implementing these much-needed and long overdue reforms? 
+
+ANSWER
+
+Honourable Speaker, I thank Dr Woodruff for the question. If I might answer the question straight up: yes, we are committed to those recommendations, as has been outlined - the Cox review recommendations and the Weiss review recommendations as well.
+
+I do not agree with you about the alternative pathway. We did have legal advice and we formed a view that in order to protect the Integrity Commission, the independent review was not possible. Rather, the Joint Standing Committee on Integrity, if that is the right terminology for it, can undertake that review in what is, in my view, a more open and more transparent manner.
+
+This has been a long journey for me when it comes to the Integrity Commission because I was on the Joint Standing Committee that recommended to set up an integrity commission back in 2008 and 2009, so I believe in it. We embarked in good faith in the JLN agreement about the review of the Integrity Commission. The principles still apply. It is just another way of doing it.
+
+Dr Woodruff - It is another way of stalling and doing nothing.
+
+A member - No, it is actually not.
+
+The SPEAKER - This is not a conversation. It is a question and an answer. If we could move through, please.
+
+Mr ROCKLIFF - As minister Ellis pointed out, a committee of this House and the other place is where we can, in my view, conduct a review in a more open and transparent way. In the meantime, the Cox recommendations and the Weiss report recommendations will be implemented, and work is underway now.
+
+Supplementary Question
+
+Dr WOODRUFF - A supplementary question, Speaker?
+
+The SPEAKER - I will hear the supplementary question.
+
+Dr WOODRUFF - I am pleased to hear that the Premier has committed to those recommendations being progressed and work is underway. Can you please tell us when you expect that will be completed?
+
+Mr ROCKLIFF - Thank you for the question, Dr Woodruff. There has already been a significant amount of work undertaken on the Cox review recommendations and other suggested reforms, including consultation through the release of a discussion paper in 2022. It is a complex area, as I believe we all appreciate, with many additional issues and proposals arising out of later reviews and consultation, with one of the recommended -
+
+Dr Woodruff - Absolute rubbish.
+
+Mr ROCKLIFF - It is actually not.
+
+Dr Woodruff - There are 151 recommendations. You have only done six.
+
+The SPEAKER - Leader of the Greens, please. Let us get through Question Time without anyone having to leave.
+
+Mr ROCKLIFF - One of the recommendations proposes 45 technical amendments to the act. To your question, the Department of Justice is drafting a plan for staged implementation of the recommendations and I can commit to it as soon as possible. I cannot give a date, but I respect the fact that you and others in the House - and I believe we all - want to strengthen the provisions -
+
+The SPEAKER - The Premier's time for answering the supplementary question has expired.
+———————————————————
+Recognition of Visitors
+
+The SPEAKER – Honourable members, can we recognise our guests in the gallery today? This is the first of three groups from Hobart College, the Legal Studies students. Thank you very much for joining us. I hope you find it informative and enlightening, and not as fun as some others might want you to find it.
+
+Members - Hear, hear.
+———————————————————
+Health - Public Maternity Hospital - Re-Establishment
+
+Mr O'BYRNE question to MINISTER for HEALTH, Mrs PETRUSMA 
+
+[10.20 a.m.]
+The collapse of Healthscope's maternity services at the Hobart Private Hospital, where hundreds of babies are born each year, has sent shockwaves through our community. I acknowledge that negotiations between the government and healthcare providers are still ongoing, and there are complex contractual arrangements in place. While you can never bring back the Queen Alex, you and your government now have an opportunity to step in and seize this opportunity. Would you use this moment to commit to re-establishing a dedicated public maternity and women's healthcare facility in southern Tasmania?
+
+ANSWER
+
+Honourable Speaker, I thank the member for Franklin for his question. In regard to Healthscope, I want to update the House and let it know that the decision to withdraw maternity services from the Hobart Private Hospital was a commercial decision made by Healthscope, which is a for-profit private equity company based in North America. I believe that Healthscope sadly let Tasmanian mums and their babies down for pure business reasons and has caused distress for expecting parents in southern Tasmania with that decision. 
+
+Our government's number one priority through all of this was to ensure that mothers and their babies have the support and services they need during their birthing journeys now and into the future. That is why we did take swift and decisive action. We worked with all key stakeholders, including the federal government, Healthscope, Calvary, unions, the Australian Medical Association, insurers, women's health advocates, obstetricians, midwives and nurses. As a result, less than a week after I was formally notified of Healthscope's decision, I was able to stand beside the federal Health minister to deliver a solution.
+
+In regard to the member's question, the $6 million secured in federal funding will upgrade infrastructure and equipment for the Royal Hobart Hospital as well as Calvary Hospital. Importantly, it will allow us to expand maternity services at the Royal Hobart Hospital. It will also enable us to have a new mother and baby unit at St John's Park.
+
+It is essential that we have a private hospital provider in this state that is economically feasible and will stay here. Calvary has been here for over 80 years providing services. We want to ensure we have a viable maternity service going forward. I thank Calvary for working with us in regard to this solution. 
+
+Healthscope still has the contract to deliver services at their current site. They have said they will be continuing to deliver other services at that site. Indulging in hypotheticals as to what can occur at that site, I am unable to give any information into that becoming a further women's and children's site because Healthscope is still there providing private services, albeit its very disappointing decision to stop providing maternity services.
+
+I want to assure the mothers, fathers and especially the mums and their bubs that we will continue to deliver the maternity services they need in southern Tasmania, with the added benefit of having a new mother and baby unit. This will ensure that the current beds that have been occupied by the mother and baby unit in the Royal Hobart Hospital will transfer to a more holistic service based at St John's Park.
+
+
+Integrity Commission - Review
+
+Dr WOODRUFF question to PREMIER, Mr ROCKLIFF
+
+[10.23 a.m.]
+Your lack of interest in a strong Integrity Commission is matched by your own lack of integrity. Look at your conduct on the stadium, the pokies reform and now the Integrity Commission inaction -
+
+Mr ABETZ - Point of order, Speaker, the reflection on the Premier is completely unacceptable and needs to be withdrawn.
+
+The SPEAKER - The member who has been offended has to take personal offence. Premier, do you take personal offence? 
+
+Mr ROCKLIFF - Yes.
+
+The SPEAKER - In which case you may ask the member to withdraw. I will caution members that there are some very interesting lines around the language that we use. This one was probably within the historic terms of language that is used. However, if the Premier has taken personal offence, we can have it withdrawn.
+
+Mr ROCKLIFF - I have been around a while, so I can hope for most things. However, this is meant to be a safe workplace and so, in the interest of all members, the member should withdraw.
+
+The SPEAKER - I will ask the member to withdraw and rephrase the question.
+
+Dr WOODRUFF - I withdraw. Premier, your lack of interest in a strong Integrity Commission is obvious to all of us. You obviously do have an interest in the stadium - have you started the clock again, Speaker?
+
+The SPEAKER - Yes. For the sake of making this work well, can we start the time for the question and the question again, please? You have one minute.
+
+Dr WOODRUFF - Thank you. Premier, your lack of interest in a strong Integrity Commission is obvious to all Tasmanians watching your behaviour. Look at your conduct on the stadium, on pokies reform and reforming the Integrity Commission itself, not to mention your relationship as a government with big salmon. 
+
+In your deal to form government last year, you promised a review of the Integrity Commission would be conducted and completed by April this year. Ten months later, you have abandoned that commitment using the most pathetic of excuses. You said there is a legal issue standing in the way of this review. We are very sceptical of that. Even if there was, believe it or not, it is something that parliament can fix. It is our job to make and change laws. Therefore, we have done your job and drafted you a bill to fix your so-called problem. We ask: what is your excuse now?
+
+The SPEAKER - I am sorry. Is that the end of your question? 
+
+Dr Woodruff - That was my question. What is his excuse now for action?
+
+The SPEAKER - The question is: the Greens having drafted a bill; what is your excuse, Premier? I will call you to the question. I note that normally we try to circulate documents with time for members to read them.
+
+Dr Woodruff - I thought that the Premier, who would be tabling it himself, would like to have a quick look before he tables it today.
+
+Mr Rockliff - Thank you. 
+
+The SPEAKER - I did say interjections if they were humorous. That is borderline humorous, but I will allow it.
+
+ANSWER
+
+Honourable Speaker, I appreciate the bill the member has drafted - and you have my middle name. Thank you very much for that, which is my mother's maiden name, if anyone wants to know. It would be far simpler for there to be no legal barriers and for the review to be done, as we have explained. I wrote a very considered letter to the chair of the committee, Ms Armitage, around these matters and outlined my reasoning. 
+
+I believe in a robust Integrity Commission and framework, incidentally. I believe the pathway of the Joint Standing Committee on Integrity reviewing is the most open, transparent and legal. I appreciate your work in drafting a bill for me, but I believe the pathway is set and that the Cox review recommendations will be implemented, and the Weiss review as well. The Attorney-General is leading that work.
+
+Supplementary Question
+
+Dr WOODRUFF - A supplementary question, Speaker?
+
+The SPEAKER - I will hear the supplementary question.
+
+Dr WOODRUFF - The Premier just said it would be far simpler to conduct the review. We have just shown that is now possible, which was his commitment with the JLN before forming government. 
+
+Members interjecting. 
+
+The SPEAKER - Order, members on my right. I am trying to hear.
+
+Dr WOODRUFF - Will he be doing that, as well as whatever the Integrity Commissioner wants to do? Will you do that work?
+
+The SPEAKER - I am pretty sure the Premier has already answered that, but if he wishes to add to it, he can choose to, but I think he made it clear that he is following the pathway of the Joint Standing Committee on Integrity. Is that correct, Premier?
+
+Mr ROCKLIFF - Correct.
+
+
+Budget Deficit - Public Service Hiring Freeze
+
+Mr WINTER question to PREMIER, Mr ROCKLIFF
+
+[10.28 a.m.]
+The decisions you have made since becoming Premier have produced the two biggest budget deficits in Tasmanian history, and not just by a little bit. These two deficits are nearly a billion dollars worse than the deficits that occurred during COVID. You are bankrupting Tasmania and there is still no serious plan to deal with it. 
+
+Your latest plan, a hiring freeze you are outsourcing to unelected bureaucrats, is lazy policy and will not go close to fixing your budget mess. Can you outline how much you intend to save specifically from this so-called hiring freeze?
+
+ANSWER
+
+Honourable Speaker, I thank the member for his question. The right-sized public service is about 6 per cent less than it currently is, back to 2022 levels. The 2500 number has been out there and plain for everyone to see. 
+
+I am more interested in the member's previous questions, when he sort of -
+
+Members interjecting.
+
+Mr ROCKLIFF - I have answered very clearly in terms of my level of responsibility for investing in essential services. Often, I would like to look at all the media releases that have been done by the Labor Party over the last couple of years as you put it and I bet it is about spend, spend, spend, and more, more, more. We will ensure that we have the right-size public service.
+
+Members interjecting.
+
+The SPEAKER - Deputy and the leader.
+
+Mr ROCKLIFF - I have a lot of faith in our head of our state service working sensibly and methodically in a measured way with our heads of agency on the hiring freeze to ensure that we bring the pathway to surplus - sustainable public service, the right size to deliver the required services and better services for the Tasmanian people. That is sensible. It is what has been welcomed by the business community. It is what we believe is the best way forward without constricting the economy through massive sackings of public servants like what happened in 2011. Nurses, police - gone. That undermined confidence as well as the services that governments should be delivering for the people of Tasmania. 
+
+I believe we can work through this in a very sensible and methodical way. All states are going through it. We will have a sensible pathway to surplus, of which this is a good way to achieve that right-size state service that Tasmanians can afford, that is sustainable and that will deliver better services for Tasmanians.
+
+Supplementary Question
+
+Mr WINTER - A supplementary question, Speaker?
+
+The SPEAKER - I will hear the supplementary question.
+
+Mr WINTER - The question was whether the Premier can outline how much he intends to save in nominal terms through his so-called hiring freeze?
+
+The SPEAKER - I will draw the Premier to that question. It was reasonably specific.
+
+Mr ROCKLIFF - Answered as well, because we have mentioned the 2500 employees.
+
+Members interjecting.
+
+The SPEAKER - Order, members on my left.
+
+Mr ROCKLIFF - Yes, I do. I also understand - it has taken some time to work through the alternative election manifesto from the Labor Party. They, of course, come in here today talking about debt but wanting to spend three times as much as we committed to at the last election.
+
+Mr WINTER - Point of order, Speaker. We only have 20 seconds. It is a nominal figure - I am looking for a financial number the Premier is seeking to save. I draw him back to the question.
+
+The SPEAKER - Premier, I will draw you to the actual question or you can choose to retain your seat.
+
+Members interjecting.
+
+The SPEAKER - With that, the time for the supplementary question has expired. 
+
+Members interjecting.
+
+The SPEAKER - Thank you, members on my left.
+
+
+Budget Deficit - Public Service Hiring Freeze
+
+Ms JOHNSTON question to TREASURER, Mr BARNETT
+
+[10.34 a.m.]
+The budget is in freefall. The only way there is a pathway to surplus is by reading the charts upside down, as economist Saul Eslake says. Indeed, you are ignoring all the sensible budget repair measures suggested by Mr Eslake. Instead, you are taking an axe to our hardworking public servants who deliver services for all Tasmanians, including the most vulnerable. You have decided to target the public service by announcing a hiring freeze on so-called non-essential workers. You cannot even say who non-essential workers are, let alone how much the freeze will save the government or how you would achieve these savings. 
+
+Why are you targeting our public servants rather than cutting spending on infrastructure like the stadium, generating more income or reining in corporate welfare to donor mates?
+
+ANSWER
+
+Honourable Speaker, I thank the member for the question. It is good to be back. I am not going to do any TikTok moves right now, or ever, perhaps. We take what we are doing in this parliament very seriously. It is very important to support the best interests of Tasmanians. I will not be embarking on those charades.
+
+Regarding the public service and your question in particular, let us be very clear, as the Premier has said - this is about getting the right size public service, and the right shape, in the right place, with the right tools to deliver the best services possible for the people of Tasmania. We want to improve the service to the people of Tasmania. We want a stronger Tasmania both now and for the years ahead. We have not just a plan but a vision to deliver on that. I clearly outlined those plans with that announcement on Sunday. The Premier, obviously with the business community yesterday, acknowledged the importance of that. The business community and industry have backed it in.
+
+This is about getting the balance right. The Premier has indicated earlier today that we invested significantly during COVID, a global pandemic. We saved lives. We saved livelihoods, people's businesses, and people's jobs. We kept them going. We supported families during tough times. We invested. Do you know what we invested? We invested more than $2 billion of taxpayers' money, because they deserved it. We are proud of that effort.
+
+Then we had a commission of inquiry, which has taken a legal liability for more than four decades and it is our responsibility. The Premier has led the way. This government has backed it in. I think on the whole we have received strong support across the parliament and across the community for those 191 recommendations. Guess what? That cost another $1 billion. Another $1 billion, $400 million more - $460 million to implement that effort, which is ongoing.
+
+The legal liability had a significant payout just a few months ago. That is in the budget. It is there. We are now in a position of taking this pathway to surplus to 2029-30. We will deliver on that. I have a steel-like commitment as the Treasurer on behalf of this government to deliver that pathway to surplus by 2029-30. We are making the right decision for the people of Tasmania and we are proud of it.
+
+The SPEAKER - The Treasurer's time for answering the question has expired.
+
+Supplementary Question
+
+The SPEAKER - I am assuming I am hearing a supplementary?
+
+Ms JOHNSTON - Thank you, Speaker. In his response, the Treasurer again identified the need to have the right-size public service. Can the Treasurer please name one example of a position which does not fit his definition of a right-size public service and is a non-essential worker? Can you give one example, please, Treasurer?
+
+The SPEAKER - I will call the Treasurer because he did identify the right-size, right shape.
+
+Mr BARNETT - Yes, thanks very much, Speaker. As I said, the right-size, the right shape, in the right place, with the right tools to get the job done. 
+
+The SPEAKER - And the question?
+
+Mr BARNETT - I have made very clear, as I did on Sunday and again in recent days, that with those essential workers, we are talking about continuing the effort, whether they are the people fighting the fires who are so essential, or whether it is our doctors, our nurses, our police, or our teachers.
+
+Dr Woodruff - Are these the ones that you are cutting out?
+
+Mr BARNETT - I am answering the question.
+
+Ms JOHNSTON - Point of order, Speaker. I have asked the Treasurer to give one example. Can you please run to the question? 
+
+The SPEAKER - I cannot force him to answer it but I will draw the Treasurer to the question.
+
+Mr BARNETT - Thank you very much. As I was saying, I have outlined exactly those essential workers who are so - 
+
+Members interjecting.
+
+Mr BARNETT - Through you, Speaker, if I could continue.
+
+The SPEAKER - I cannot hear the Treasurer.
+
+Mr BARNETT - We have asked our agency heads to make those decisions in consultation with the head of the State Service and to make that review and to be consulted accordingly.
+
+The SPEAKER - The Treasurer's time for answering the supplementary question has expired.
+
+
+Spirit of Tasmania V - Leasing Options
+
+Mrs BESWICK question to MINISTER for TRANSPORT, Mr ABETZ
+
+[10.39 a.m.]
+Those of us who were hoping Tasmania could recoup some of the revenue lost due to the Spirits saga were disappointed that the leasing negotiations fell over. While you have confirmed Spirit IV will return to Tasmania, the logistical challenge will become twice as difficult when Spirit V is here as well. Noting it was due for delivery six months after Spirit IV, which is now, when will the Spirit V be completed? Will it come directly to Tasmania, or will you again explore leasing options in Europe to help offset the financial hit on our state?
+
+ANSWER
+
+Honourable Speaker, I thank the member for her question. It is a very sensible question for us to consider as a government and for the benefit of the people of Tasmania, whether there are commercial opportunities in relation to Spirit IV and Spirit V. We did that with Spirit IV. 
+
+Your specific question is in relation to Spirit V, which, at this stage, is anticipated for sea trials on 7 April. Those sea trials commence with the diesel or bunker fuel; they then go out again on the LNG and that is all in preparation for the handing over of Spirit V to the Tasmanian people. Until all those sea trials are finished, I am unable to provide you with a definitive answer or date for when we take possession of Spirit V, but if there is an opportunity for a commercial venture to enable us to gain some income from Spirit V, yes, we will.
+
+We will explore that as we are duty-bound to do for the benefit of the people of Tasmania. We can either have her do nothing or we can explore opportunities. That is what we have done with Spirit IV. We will continue to do so. In the event that something commercially beneficial for the people of Tasmania arises, we will pursue such a course.
+
+Any sensible person confronted by what the government has been confronted by, would seek to recoup any possibility of money for the people of Tasmania. That has to be done in a proper commercial sense and that is what the TT-Line has explored and will continue to explore. At this stage, those opportunities for Spirit IV have been exhausted. 
+
+That said, we will always be open to consider commercial opportunities for the benefit of the people of Tasmania. When Spirit V comes online, we will be doing exactly the same, and the commercial common sense of the member for Braddon is something I suggest the Leader of the Opposition should adopt.
+
+
+State Service - Non-Essential Jobs - Scrutiny
+
+Mr WILLIE question to PREMIER, Mr ROCKLIFF
+
+[10.43 a.m.]
+Ever since the 2019 budget, your government has promised to implement measures involving cuts to non-essential and backline jobs. Every time, you have refused to say which jobs are considered non-essential. You have never had a serious policy to address your budget problem and, as a result, Tasmania's budget position has continued to deteriorate rapidly.
+
+You have now posted the two biggest deficits in the state's history by a long way and put the state on a path to a $10 billion debt. You still cannot say which jobs you consider non-essential. Is a senior media and communications officer, a job currently being advertised by State Growth with a six-figure salary, essential? Or, a senior communications officer role at the Department of Justice, which is also currently advertised with a six-figure salary? When you are the one who created the problem and these are the sorts of roles being advertised, can you see why no-one believes you have what it takes to fix Tasmania's budget mess?
+
+ANSWER
+
+Speaker, what we will not be doing is putting hospital beds in storage and sacking nurses. We will not be doing that. I am not sure if it is implied in your question exactly what we will be doing, but I can assure you we will not be making significant cuts to frontline services like you did - a nurse a day for nine months, 108 police officers, if my memory serves me correctly. Not only did that undermine good public services that Tasmanians expect, it also undermined the confidence in the economy, which is why our businesses shed jobs, which is why unemployment was around 8.6 per cent.
+
+Mr WILLIE - Point of order, Speaker. The Premier has gone nowhere near the question. I outlined a number of roles. He will not answer what is a non-essential role and whether he has what it takes to fix the budget crisis that he has created.
+
+The SPEAKER - Premier, you have spent over two minutes discussing 2011. I draw you to the question.
+
+Mr ROCKLIFF - Yes, I have what it takes. Do you? The Labor way is higher taxes and cutting essential services. That is not what we are going to do. We are not going to cut essential workers: we are not going to sack nurses, doctors, police, and teachers.
+
+Members interjecting.
+
+The SPEAKER - Members on my left, I understand how passionately everybody feels about this, but the question is serious and the Premier needs to address it.
+
+Mr ROCKLIFF - We set the policy direction, alright? We said at the election, in an open and transparent way, that we will have the right-sized public service and ensure that it is at 2022 levels. We said it in the Budget. The Revised Estimates Report was there. This is no surprise.
+
+We will get the job done. We will work across agencies. The head of the State Service, Kathrine Morgan-Wicks, is doing an exceptional job and will continue to do so, working with heads of agencies to ensure that the policy objective is implemented with regard to the right-sized public service delivering better services and that reduction of around 6 per cent in the State Service to bring it to sustainable levels.
+
+The SPEAKER - The Premier's time for answering the question has expired.
+
+Integrity Commission - Investigations into Members of Parliament 
+
+Dr WOODRUFF question to PREMIER, Mr ROCKLIFF
+
+[10.47 a.m.]
+It is on the public record that the Integrity Commission has been investigating at least two MPs since 2022. These years-long investigations clearly show why the commission needs to have both its powers and funding beefed up. These delays raise other questions.
+
+Last week, a report by ABC journalist Adam Holmes noted that taxpayers have funded over $250,000 in legal fees for unknown MPs for unknown reasons. We do not even know how many ministers or Liberal backbenchers this spending relates to. Looking at these ongoing Integrity Commission investigations and these huge legal bills side by side, it is reasonable to ask whether there is a relationship. 
+
+We know you cannot comment on the specifics of an Integrity Commission matter, but surely you can provide a general response as it is clearly in the public interest. Has any taxpayer funding been used to assist any of your MPs in relation to Integrity Commission investigations?
+
+ANSWER
+
+Honourable Speaker, I am advised that our public officers and ministers are involved in a vast array of work programs, strategic issues, and complex matters in undertaking their duties in serving the Tasmanian community. However, sometimes they may be the subject of legal proceedings, inquiries, claims, or actions, despite the fact that they are acting in good faith and within the scope of their duties. It is appropriate to provide legal assistance for indemnity to public officers and ministers to ensure fair treatment of employees and to protect the Crown's interests and the integrity and effective management of the State Service.
+
+Supplementary Question
+
+Dr WOODRUFF - A supplementary question, Speaker?
+
+The SPEAKER - I will hear the supplementary question.
+
+Dr WOODRUFF - The Premier did not answer the question. The Cabinet approves those legal fees. My question was: has any taxpayer funding been used to assist any of your MPs in relation to Integrity Commission matters that must have come before you and Cabinet?
+
+The SPEAKER - I draw the Premier to that question.
+
+Mr ROCKLIFF - I am not able to comment on Cabinet matters and do not intend to.
+
+Dr Woodruff - He will not confirm or deny it, $250,000 of taxpayer money?
+
+The SPEAKER - I will be taking no-one until the Leader of the Greens has finished her conversation.
+
+
+State Service - Hiring Freeze
+
+Mr WILLIE question to PREMIER, Mr ROCKLIFF
+
+[10.50 a.m.]
+When you became Premier you said your goal was to lead a government with heart. You significantly increased the size of the public service, adding thousands of new positions and posted the two biggest deficits in Tasmania's history. You now claim there are too many non-essential workers in the public service. You are the one who trashed the state's finances and you cannot say who your so-called hiring freeze applies to. How can Tasmanians trust the economic vandals to clean up the budget mess?
+
+ANSWER
+
+Honourable Speaker, when it comes to investing in essential services, I am very proud of our record. I am very proud of the fact that we have invested in 2500 more nurses and frontline professionals. I am very proud of the fact that we continue to invest in schools to ensure that our kids can read and write, and I am very pleased, not only of the investment we are making, but also -
+
+Members interjecting.
+
+The SPEAKER - You might be whispering, Deputy Leader, but I can hear you. That will cease.
+
+Mr ROCKLIFF - of the policy we have implemented to ensure that, through greater medical awareness, and instruction, that there is significant improvement, I am advised, in terms of literacy in our schools, particularly at an earlier age. I am very proud of the fact, as is needed, that we are investing in the commission of inquiry recommendations. I am very proud of the fact that we have more police on the beat to ensure community and public safety.
+
+I am very proud of the fact we have invested in essential services and proud -
+
+Members interjecting.
+
+The SPEAKER - Thank you, members on my left.
+
+Mr ROCKLIFF - of the areas that we have committed to in the 2030 Strong Plan for Tasmania, which is about economic growth, opportunity, aspiration, and ambition, but is also about a government with heart that supports the organisations that support vulnerable Tasmanians. At the last election, we committed - you did not - to support the community organisations that are advocated for by TasCOSS (Tasmanian Council of Social Services) with an increase in funding to ensure they can do their job supporting vulnerable Tasmanians - more support for our community houses, for example. These are all good investments from a government with heart.
+
+The Labor-Greens government showed no heart when it sacked nurses and police, and unemployment went up to 8.6 per cent. The state went into recession when you were last in government, Labor and Greens opposition. We will do what Tasmanians expect us to do, which is to have a public service and a State Service that we can afford, that is sustainable, and that is delivering better services for the Tasmanian community.
+
+
+Salmon Industry - Disease Outbreak
+
+Mr GARLAND question to PREMIER, Mr ROCKLIFF
+
+[10.54 a.m.]
+Our largest primary industry, the salmon industry, is being decimated by a disease outbreak. We are witnessing mortalities on a scale we have not seen before, yet there are no public statements or media releases from the ministers or departments. We have heard nothing from the minister for Resources, the Department of Biosecurity, the Minister for Health or the minister for the Environment. Why is the public being kept in the dark? What strain of Rickettsia are we dealing with? Where are they being buried and will taxpayers' money be paying anything towards this huge and expensive clean-up?
+
+ANSWER
+
+Honourable Speaker, I thank Mr Garland for the very good question. I may have to refer to the minister when it comes to some more detail in your answers. 
+
+Through our Environment Protection Authority (EPA) and our discussions with industry, we are aware of a significant mortality event, about which we have the utmost concern. I expect openness and transparency from the companies in relation to this matter. Absolutely, 100 per cent, if that is where your question is leading. I acknowledge community concerns about this very concerning matter. I also acknowledge the challenging situation salmon companies have been dealing with due to the reported high number of mortalities occurring within a very short period of time.
+
+We are concerned about our environment. We share community concerns and we are concerned also for the industry and wider impacts. We understand the minister is in close contact with the EPA, industry and relevant stakeholders on this matter. The issue is still unfolding and we are yet to understand the full impact of what has happened. There is a multi-factorial nature of its causes. 
+
+We have strengthened the Environment Protection Authority's role as an independent environmental regulator to ensure the comprehensive environmental monitoring and regulation of our salmon industry. They are reforms that we have embarked on, and implemented in many respects. Those reforms started in about 2015, if my memory serves me correctly because I recall being Minister for Primary Industries. The Department of Primary Industries, Water and Environment, as it was known then, was in charge of the growth of the industry but also the regulation. That did not sit well with me or the government. That is why we have the independent EPA and an industry that we want to support and promote growth in because it is very important for rural and regional Tasmania. It employs many thousands of Tasmanians both indirectly and directly through all the supply chains. We are a very strong supporter of the salmon industry, as we should be. 
+
+However, that support is not a blank cheque. I expect openness and transparency from the companies, Mr Garland.
+Midwives - Caseload Midwifery Industrial Agreement 2019
+
+Mrs PENTLAND question to MINISTER for HEALTH, Mrs PETRUSMA
+
+[10.58 a.m.]
+Given the Caseload Midwifery Industrial Agreement 2019 with the Australian Nursing and Midwifery Federation (ANMF) expired in 2022 with constant delays, we are now in March 2025, three years on, and still no closer to having a signed agreement. 
+
+With midwife caseloads continuing to be a significant issue, can you clarify why the ANMF's request for a new log of claims was rejected? Also, despite them submitting an alternative proposal, why are they still waiting for a response? Can you provide a clear timeframe for when negotiations will officially resume so that the health of mothers and their babies are put before politics?
+
+ANSWER
+
+Honourable Speaker, I thank the member for her question. Industrial agreements are handled at arm's length from ministers. However, I will get some information for the member to find out what the proposed timelines are.
+
+In regard to our maternity nurses, I thank them for what they do each and every day for looking after our mums and our bubs. We are doing a lot in the department about building up our maternity workforce. We are offering $15,000 scholarships so that we can encourage more midwives to come and work in Tasmania. For new graduates, we are offering $10,000 for them to stay here. We are also recruiting new student midwives so that they can train here in Tasmania and do studies online to become qualified midwives. We are also now examining a fast-track qualification to enable more midwives in this state.
+
+There is a body of work about supporting our hardworking midwives who work in our maternity services. In regard to the specific question, I will have to come back and update the House. 
+
+The SPEAKER - Just to confirm that - it has been taken on notice for an update to the House on the timeline for industrial negotiations.
+
+
+Spirit of Tasmania IV - Leasing Proposal
+
+Mr WINTER question to PREMIER, Mr ROCKLIFF
+
+[11.00 a.m.]
+At a time when you have driven Tasmania into record debt, you have wasted millions of dollars in Scotland, with our Spirit IV being proposed to be used as a floating refugee camp. Can you confirm that the first time you became aware that the Scottish Government was not interested in your ridiculous proposal was on Saturday, when they provided a statement to the ABC? 
+
+ANSWER
+
+Honourable Speaker, I thank the member for his question. I believe I covered that in a media conference yesterday. Over the weekend, yes, that is correct. It is important to get value for taxpayer dollars. At the end of the day, given the circumstances we are in, which are less than ideal, given that there was a tens of millions of dollars opportunity why would we not explore that?
+
+Yesterday I was with the chair of the Tasmanian Chamber of Commerce and Industry (TCCI), who was asked the question. I cannot quote Wayne directly, but he said all businesses look at commercial opportunities to see if they can improve their bottom line. That is what TT-Line did - 
+
+Members interjecting.
+
+Mr Winter - They are in breach of their debt agreement.
+
+The SPEAKER - Members on my left, will you allow the question to be answered. They can ask a supplementary.
+
+Mr ROCKLIFF - We explored an opportunity. It did not work out and now -
+ 
+Members interjecting.
+
+The SPEAKER - Members on my left, I just asked you to hear the answer.
+
+Mr ROCKLIFF - Now, as we always plan to do, Spirit IV will be coming back to Tasmania for a final fit-out. It would be irresponsible, given the circumstances that we faced, not to explore that opportunity, which for other entities has resulted in tens of millions of dollars. We explored it. It did not work out but, as we always planned to do, we are bringing Spirit IV back to Tasmania for fit-out. You can criticise us all you like, but we tried to boost TT-Line's bottom line in the best interest of the Tasmanian taxpayer, whereas what you have done continually with your negativity is not only undermine TT-Line, but you are also out there every single day undermining Tasmania and Tasmanians with your incessant negativity. I will have none of that. We will continue to do the best job we possibly can when it comes to what are most difficult circumstances.
+
+Supplementary Question
+
+Mr WINTER - A supplementary question, Speaker?
+
+The SPEAKER - I will hear the supplementary question.
+
+Mr WINTER - In the Premier's answer, he confirmed that the first he learnt of the Scottish Government not being interested in leasing Spirit IV was on the weekend. Coming from that answer, I wonder if you can explain, then, what active commercial negotiations took place, given that it appears the Scottish Government was never interested?
+
+Mr ROCKLIFF - TT-Line's brokers were negotiating with an international shipping agent. That is how the system works. You explore these opportunities with the best of intent, in the best interests of Tasmanians. Those opportunities were explored, they did not eventuate and now, as planned, we will bring the ship back to Tasmania. 
+
+
+Spirit of Tasmania Vessels - Cost of Fit-out using Fly-in Fly-out Workers
+
+Mr JENNER question to MINISTER for BUSINESS, INDUSTRY and RESOURCES, Mr ABETZ
+
+[11.05 a.m.]
+Honourable Speaker, I am not sure if the question is for the Minister for Business, Industry and Resources or the Premier, but the question I -
+
+The SPEAKER - I am sorry; you do need to identify who the question is for.
+
+Mr JENNER - I will go for the Minister for Business, Industry and Resources then.
+
+Mr Rockliff - All right.
+
+The SPEAKER - Thank you. The Premier is delighted from the sounds of it.
+
+	Mr JENNER - Obviously, there has been a lot of talk this morning about saving money. We have just spoken about the Spirit IV coming back for a refit. The government initially assured Tasmanians that local workers would be responsible for fitting out the new ferry ships under the assumption that the ferries would obviously be coming back to Tasmania for completion. However, now it appears that workers have been flown to Scotland on a fly-in fly-out basis to carry out this work. Can you clarify the total cost to taxpayers for the flights, accommodation and associated expenses with this arrangement?
+
+ANSWER
+
+Honourable Speaker, I suspect that neither the Premier nor I have that information in our back pocket, so I will take that aspect on notice. It might take some time to get the exact figure for the member for Lyons. 
+
+In relation to the Spirit IV being in Leith in Scotland, can I confirm that there were a number of visits by parties to the ship checking her out for the possibility of lease and/or charter. Let us just set that on the record. It is important that there was genuine interest in potentially chartering the vessel. In relation to keeping her -
+
+The SPEAKER - If I can, leader of business, you have answered the original question. You cannot answer someone else's question.
+
+Mr ABETZ - In relation to keeping her in Leith and the sending over of crew, that is part and parcel of what the TT-Line has done on a number of occasions in conjunction with staff and the unions.
+
+In relation to the fit-out, as I understand it - and I will be corrected on this - the people who are being flown over at the moment are not for the purposes of fit-out but for the purposes of maintaining the ship and now preparing her to come to Tasmania.
+In relation to the fit-out and local content from - and somebody can correct me, but I think from May 2021, we have always said that local content was Australian and Tasmanian content. This is something that those opposite continually misinform the public about and delete the Australian aspect of it and suggest it was only Tasmanian. In May 2021 it was stated by my predecessors that this would be Australian and Tasmanian content. A lot of that has already been delivered in the fit-out or building of the ships, I should say. This includes the example that I have used with Hydrowood, which is part and parcel and incorporated in the bill. You cannot retrofit it when she comes to Tasmania - or it could be, but at great extra expense. A lot of Tasmanian -
+
+Dr Woodruff - Speaker, just a point of clarification?
+
+The SPEAKER - Sorry. Can I just stop - and we will stop the clock. There is no such thing as a point of clarification. You may make a point of order, but there is no clarification point.
+
+Dr WOODRUFF - Point of order about the minister's gendered language about ships. I think that is something that perhaps you could update. It is not really appropriate these days.
+
+Members interjecting.
+
+The SPEAKER - I genuinely understand what the member is saying. As the wife of a seafarer, I assure you they are always called as female. That is an issue probably for the industry to take up rather than the Parliament of Tasmania. I do not think it is language that we can be responsible for in this House.
+
+Dr Woodruff - In the past they were. Just for noting then.
+
+The SPEAKER - I call the minister to the question.
+
+Mr ABETZ - Soon the member will be complaining that they are referred to as ships because that has 'she' at the beginning of it. Really, to interrupt an answer - a serious question getting a serious answer - on such a frivolous basis just shows how the Greens deal with these matters. 
+
+In relation to the matters that the member raises, I will provide him with details on the record that can assure him that local content will be installed here in Tasmania.
+
+The SPEAKER - The minister's time for answering the question has expired. I will confirm that we will be getting the answer but the minister has indicated it may not be by the end of today.
+
+
+Salmon Industry - Fish Deaths and Pollution
+
+Dr WOODRUFF question to PREMIER, Mr ROCKLIFF
+
+[11.10 a.m.]
+Tasmanians are deeply distressed by your government's continued attack on this island's environment, as you would have seen outside this morning. Diseased fish have been dying in the hundreds of thousands. The putrid results are still washing up on some of southern Tasmania's most beautiful beaches - Bruny Island, the Tasman Peninsula, and Verona Sands. Popular summer spots are now stinking.
+
+For weeks, the EPA played down the health impact of rotting corpses. Big salmon even compared the gross chunks to health products sold in pharmacies. Today, public health officials are warning locals not to touch the salmon remains. Do you acknowledge this looks set to be the rank reality of summers to come for locals? Will you rein in your salmon cronies to prevent that happening?
+
+Mr Rockliff - I missed the last bit of the question.
+
+Dr Woodruff - Rein in the salmon cronies.
+
+Mr Rockliff - No, the bit before that.
+
+The SPEAKER - The Premier did not hear the question that you had at the end. Could you please repeat the question that you had at the end of your long preamble for the House?
+
+Dr WOODRUFF - The preamble that I believe was in order because it was within time.
+
+The SPEAKER - It was.
+
+Dr WOODRUFF - Premier, do you acknowledge this looks set to be the rank reality of summers to come - putrid, rotting fish turning up on beaches?
+
+ [Bookmark: _Hlk191984198] The SPEAKER - Before I call the Premier, I remind members that the actions that were taken outside the parliament today caused potential damage to a heritage building that is already a little bit on the fragile side. We should not be glorifying that in any way. We have always allowed protests at this place, but that kind of action puts in jeopardy our ability to safely allow protests on site. That is a matter that we will be investigating.
+
+Members - Hear, hear.
+
+Dr Woodruff - It was a peaceful protest.
+
+Members interjecting.
+
+ [Bookmark: _Hlk191984216] The SPEAKER - I am happy with protests, but climbing our building and putting people at risk is not okay. 
+
+ANSWER
+
+The answer to your question is no.
+
+Dr Woodruff - Are you comfortable with this?
+
+Mr ROCKLIFF - No.
+
+Dr Woodruff - Comfortable with millions of dead fish?
+Mr ROCKLIFF - No.
+
+Dr Woodruff - What are you going to do? You have not done anything. Mr Garland was perfectly right. No press releases. Nothing.
+
+The SPEAKER - The Leader of the Greens will cease her interjections. I realise it is her last question and therefore being thrown out does not cause her much grief today, but it will not be tolerated. 
+
+Premier, I will draw you to the question without engaging directly the Leader of the Greens.
+
+Mr ROCKLIFF – Honourable Speaker, what has happened is clearly unacceptable. There will be investigations as to the cause and effect of what has happened. The answer to your question, every summer, the answer is no. I expect full openness and transparency from the companies. We have a very strong regulatory system with independent EPA and the companies are on notice.
+
+Supplementary Question
+
+Dr WOODRUFF - A supplementary question, Speaker?
+
+The SPEAKER - I will hear the supplementary question.
+
+Dr WOODRUFF - Thank you to the Premier for saying he expects full openness and transparency from the companies. Can you please confirm that all the information about the volumes and the numbers of dead fish will be made public?
+
+The SPEAKER - I call the -
+
+Dr Woodruff - Including the organisms they are infected with.
+
+The SPEAKER - You have resumed your seat. You do not get to add to the question.
+
+Mr ROCKLIFF - First, I expect, as per the EPA legislation, that all reporting will be as per the law and legislation and in an open and transparent way. We get a full understanding of why the situation has occurred.
+
+Dr Woodruff - The community wants to know.
+
+The SPEAKER - Leader of the Greens, I have asked you to cease interjecting.
+
+Dr Woodruff - Sorry.
+
+Mr ROCKLIFF - I know.
+
+The SPEAKER - Premier, you will cease talking directly to the Leader of the Greens and direct your answers through the Chair so that we can move on to the next question. Resume your seat as well, if you wish.
+
+Spirit of Tasmania IV – Tabling of Potential Lease Documents
+
+Mr WINTER question to PREMIER, Mr ROCKLIFF
+
+[11.14 a.m.]
+You have been claiming since January that TT-Line was in active commercial negotiations to lease Spirit IV. You have used it as the basis for your refusal to answer any questions about it. We did not find out for two years that you bailed out RMC (Rauma Marine Constructions) in 2022. It was not until Labor asked questions in parliament that we discovered that you bailed them out again last year. You kept the delays at berth 3 secret from Tasmania until we dragged them out of you, too. You did not tell the tourism industry that they were not going to have a Spirit IV operating this summer.
+
+The only public statement from the Scottish Government that has been released said they were not interested, and in your words, 'At all.' Can you see why we are struggling to believe anything you say, or believe that negotiations were ever serious and that it is not just a ruse to keep the Spirits hidden in Scotland for as long as possible. Will you table all correspondence received from the Scottish Government, or people acting for them, in relation to the potential lease?
+
+ANSWER
+
+Honourable Speaker, I thank the Leader of the Opposition for the question. The minister has given a very comprehensive answer about this. They were serious negotiations and serious opportunities. I believe a number of leasing options were explored in the best interest of the Tasmanian taxpayer. There are opportunities during budget and GBEs to scrutinise these matters.
+
+First, I reject the premise of your question. This has been a very challenging set of circumstances. What I can say is that I have enormous confidence in the TT-Line board and the Chair of TT-Line, Ken Kanofski, who is working with a fine-tooth comb through all these matters which have exercised the community who are quite rightly concerned over the last couple of years. I make that very clear. We will always be open and transparent. I assure the member -
+
+Mr WINTER - Point of order, Speaker. I remind the Premier that the question was asking whether he would table all correspondence received from the Scottish Government or its intermediaries in relation to the potential lease.
+
+Mr ROCKLIFF - We will seek advice on those matters and get back to the House.
+
+The SPEAKER - Can I confirm that the Premier will seek advice and update the House if it is possible to provide that information?
+
+Mr ROCKLIFF - I will seek advice.
+
+Time expired.
+
+
+ANSWERS TO QUESTIONS
+
+Midwives - Caseload Midwifery Industrial Agreement 2019
+
+[11.17 a.m.]
+Mrs PETRUSMA (Franklin - Minister for Health) - Honourable Speaker, I have an update on a question.
+
+The SPEAKER - Yes, if the minister wishes to add to a question. Something I actually encourage. Well done.
+
+Mrs PETRUSMA - Thank you, Speaker. I want to provide an update to the member for Bass regarding her question. I have sought advice regarding this matter and can advise that negotiations for a replacement caseload midwifery agreement commenced in August 2023. Negotiations between the department and the ANMF have been ongoing, with an offer rejected by the ANMF in June 2024. I am advised that a revised offer is in the final stages of approval by the State Service Management Office and the ANMF will be notified as soon as this process is completed.
+
+
+Spirit of Tasmania Vessels - Cost of Fit-out using Fly-in Fly-out Workers
+
+Mr ABETZ (Franklin - Minister for Business, Industry and Resources) - Honourable Speaker, further to the answer that I provided to the member for Lyons, whilst I did not have it in my back pocket, my staff had a five-page document which will be helpful. I seek to table that for the benefit of the member and the House.
+
+
+CONSTITUENCY QUESTIONS
+
+Foxglove - Funding for Eradication
+
+Ms BADGER question to MINISTER for PRIMARY INDUSTRIES and WATER, Ms HOWLETT
+
+[11.18 a.m.]
+My question is on behalf of Lyons constituents battling foxglove. Thank you for finally declaring foxglove, Digitalis, a weed in Tasmania. It is a very welcome move that could make a huge difference in protecting the Tasmanian Wilderness World Heritage Area, our national parks and local bushland. For the declaration to be fully effective there must be broad-spread community education on the various management zones and a funding stream to support local government, Parks and Wildlife Service and community groups to adequately deal with the problem which has now been recognised. Can you please outline your plan for community education and what additional funding will be directed into tackling foxglove across Tasmania?
+
+
+Macquarie Point - Fuel and Sewerage Pipeline
+
+Mr WILLIE question to MINISTER for INFRASTRUCTURE, Mr VINCENT
+
+My question is on behalf of my constituent, Greg, from Lutana. 
+
+The RSV Nuyina was commissioned in Hobart on 16 October 2021. The need to plan the sewerage works relocation from Macquarie Point to Selfs Point occurred at about the same time. For over four years, the government has been aware that a sewerage pipeline would be necessary and that a solution needed to be found for refuelling of the ship which cannot transit the Hobart Tasman Bridge. Both pipelines start almost in the same place near Macquarie Wharf 6, and end about 600 metres apart in the Newtown Bay Area.
+Did the government consider dual pipelines, in particular a fuel line for RSV Nuyina? Why was it ruled out and on what date?
+
+Has the government done a cost-benefit analysis of the different options including a dual pipeline, barges or trucks?
+
+Have the safety risks of the different options been considered? If so, are some options safer than others?
+
+Has the government considered revisiting the dual pipeline proposals -
+
+The SPEAKER - Sorry, that did go a little overtime. I apologise, I was not paying attention.
+
+
+Launceston CBD - Street Crime
+
+Mr FAIRS question to MINISTER for POLICE, FIRE and EMERGENCY MANAGEMENT, Mr ELLIS
+
+A number of my Bass constituents have complained about levels of crime in the Launceston CBD. What steps has the government taken recently to reduce street crime in Launceston?
+
+
+Franklin Electorate - Public Transport Management
+
+Ms BROWN question to MINISTER for TRANSPORT, Mr ABETZ
+
+[11.21 a.m.]
+My question comes from a number of students in our shared electorate of Franklin. As students attending Hobart College, they constantly struggle to make it to and from school, despite living relatively close to school. Why do you use bus driver shortages as an excuse for lack of efficiency and well-organised public transport when the conditions and pay are so poor for such a challenging job? What policies do you have planned to help combat poor worker conditions and bad bus route management? How do you plan to implement them?
+
+
+Ben Lomond - Infrastructure Works
+
+Mr WOODS question to MINISTER for PARKS, Mr DUIGAN
+
+I recently visited Ben Lomond with a constituent. It was good to see works progressing on the $2.8 million Ben Lomond, an all-year-round destination. Can you please advise what additional infrastructure projects are planned, and when is it expected that the works of Jacobs Ladder will commence?
+
+Time expired.
+
+
+PETITION
+
+Meat Processing in Tasmania
+
+[11.22 a.m.]
+Mr WINTER (Franklin - Leader of the Opposition) - Honourable Speaker, I have the honour to be the bearer of an e-petition signed by approximately 1087 petitioners regarding the business of meat processing in Tasmania. The petition conforms with the relevant Standing Orders and Rules of the House.
+
+Petition received.
+
+
+RESPONSES TO PETITIONS
+
+No. 15 - Lewisham Foreshore - Access to Okines Beach
+
+Mr Abetz tabled the response to a petition tabled by Mr Shelton on 27 November 2024.
+
+Petition No. 15 of 2024 - See Appendix 1 on page 49.
+
+
+No. 10 - TASC Student Advisory Board
+
+Mr Abetz tabled the response to a petition tabled by Mr Jaensch on 21 November 2024.
+
+Petition No. 10 of 2024 - See Appendix 2 on page 51.
+
+
+QUESTIONS ON NOTICE - ANSWERS
+
+No. 36 - Three Capes Track and Overland Track - Income/Expenses
+
+Ms BADGER question to MINISTER for PARKS, Mr DUIGAN
+
+See Appendix 3 on page 53.
+
+
+No. 41 - Energy Sector - Climate Change Mitigation
+
+Dr WOODRUFF question to MINISTER for PARKS, Mr DUIGAN
+
+See Appendix 4 on page 57.
+
+
+No. 26 - Scatter Radiation - Health Worker Safety
+
+Ms HADDAD question to MINISTER for HEALTH, Mrs PETRUSMA
+
+See Appendix 5 on page 61.
+
+
+MESSAGES FROM THE GOVERNOR
+
+Assent to Bills
+
+The SPEAKER - Honourable members, I am in receipt of a message from Her Excellency the Governor advising assent to the following bills:
+
+Family Violence Amendment (Protecting People and Their Pets) Bill (No. 38 of 2024)
+
+Land Use Planning and Approvals Amendment (Supporting Development) Bill (No. 49 of 2024)
+
+Land Use Planning and Approvals (Stony Rise Development Approval). Bill (No. 52 of 2024)
+
+Having been presented to the Governor for the Royal Assent, she has, in the name of His Majesty the King, assented to the said bills on 13 December 2024.
+
+Honourable members, I am in receipt of a further message from Her Excellency the Governor advising assent to the following bills:
+
+Justice Miscellaneous (Commission of Inquiry) Bill (No. 37 of 2024)
+
+Justice and Related Legislation (Miscellaneous Amendments) Bill (No. 19 of 2024).
+
+Judicial Commissions Bill (No. 41 of 2024).
+
+Sentencing Amendment (Presumptive Sentencing for Assaults on Frontline Workers) Bill (No. 23 of 2024).
+
+Having been presented to the Governor for the Royal Assent, she has in the name of His Majesty the King, assented to the said bills, on 13 December 2024.
+
+
+Appropriation (Supplementary Appropriation 2024-25) Bill 2025 (No. 1) 
+
+
+The SPEAKER – Honourable members, I am in receipt of a further message from the Governor:
+
+In accordance with the provisions of Section 38 of the Constitution Act 1934 (25 Geo V No. 94), the Governor recommends to the House of Assembly:
+
+In respect to the financial year ending 30 June 2025, the payment out of the Public Account of the sum of four hundred and sixty seven million, five hundred and twelve thousand dollars ($467,512,000) for the purposes referred to in Schedule 1 to the Appropriation (Supplementary Appropriation for 2024-25) Bill 2025 and detailed in either the agency information in support of the estimates for the year or the information tabled by the Minister in support of Schedule 1.
+
+Signed by the Governor.
+
+
+APPROPRIATION (SUPPLEMENTARY APPROPRIATION 2024-25) BILL 2025 (No. 1) 
+
+First Reading
+
+Bill presented by Mr Barnett and read the first time.
+
+
+GAMING CONTROL AMENDMENT (DEALING WITH STOLEN MONEY) BILL 2025 (No. 2)
+
+First Reading
+
+Bill presented by Ms Johnston and read the first time.
+
+
+MOTION
+
+Committee Membership
+
+[11.32 a.m.]
+Mr ABETZ (Franklin - Leader of the House)(by leave)- Honourable Speaker, I move -
+
+That:
+
+The honourable member for Lyons, Ms Butler, be appointed to serve on the Joint Standing Committee on Integrity in accordance with section 23, subsection (4) of the Integrity Commission Act 2009 (No. 67);
+
+The honourable member for Clark, Ms Haddad, be appointed to serve on:
+
+	The Committee of Privileges and Conduct in accordance with Standing Order 325; 
+
+	The Joint Sessional Committee on Recommendations of Final Report of the Commission of Inquiry; and
+	
+	(c)	The Joint Standing Committee on Electoral Matters;
+
+The honourable member for Bass, Mr Ferguson, be appointed to serve on:
+
+		(a)	The Joint Standing Committee on Electoral Matters in place of the honourable member for Bass, Mr Wood, and
+		
+		(b)	The Joint Select Committee on Energy Matters in place of the honourable member for Lyons, Mr Shelton.
+
+Motion agreed to.
+
+
+MATTER OF PUBLIC IMPORTANCE
+
+Debt and Deficit
+
+[11.33 a.m.]
+Mr WILLIE (Clark) - Honourable Speaker, I rise to talk about debt and deficit. It was an interesting weekend, I must say. We had the Treasurer out on the weekend finally admitting that this government has destroyed the state's finances. After trying to maintain that everything was fine, the debt was manageable, that he had a mythical pathway to surplus, he has finally admitted that there is a major problem. 
+
+This is off the back of ignoring respected independent economist Saul Eslake's report. He would not even look at some of the guard rails required to stop this descent into record deficit and debt. Some very sensible suggestions, ones he could implement - he ignored all of those, which I thought was eye-opening and very dismissive. I wonder if the former treasurer may have provided the same response. I know that he took the report a lot more seriously. In fact, he actually mentioned it in the budget. We had a cobbled together response from this Treasurer. 
+
+I almost felt sorry for this Treasurer when he took the job. He has an almighty mess in front of him due to the previous two treasurers. That sympathy was short-lived, however, because he has been a member of this government for a long time. It is a collective responsibility and there has never been a worse government than this one in terms of deficit and debt.
+
+The Treasurer talks about a mythical pathway to surplus, but there is no such pathway. In fact, Saul Eslake said the only evidence of a pathway to surplus is if you turn the charts upside down. Even if he does achieve a net operating surplus in 2029-30 like he is claiming, that does not necessarily stop the debt. He needs a cash surplus to stop the ballooning debt and he has not even gone near that question.
+
+Just this year we have seen a half-a-billion-dollar blowout in the deficit figure. The budget was not even five months old when they announced that. They cannot even stick to a budget for five months. They have blown the budget by over $500 million. They have added $1 billion to state net debt, all of which has to be serviced, and there is a $1.5 billion bill baked into the budget for debt servicing. Not to make inroads into the debt, just to service it. In the last year of the forward Estimates, it is a bill of $500 million every year. There is a significant number of teachers, nurses and police you could hire for that. I heard the Premier talking about schools; imagine how many schools you could open for $500 million year on year.
+
+This is despite their dodgy accounting. On page 60 of the revised Estimates report, they detail $345 million of additional health expenditure this year but they do not count it in any of the out years in the budget. There is a significant black hole there in this budget. A billion dollars more that they have not tallied up. We know this government has form when it comes to programs ending across the forward Estimates. They have had a magic pencil for their whole time in government. They have these programs that end in the forward Estimates. They do not account for them properly, and then when we get there, another deficit blowout. A huge deficit blowout. 'Oh, we did not account for all of that stuff.' It catches up with them in the end.
+
+In terms of debt servicing, we are in a significant crisis now, to the point where the credit agencies are downgrading Tasmania's outlook to negative. They have fired the warning shots across this government's bow and they have basically told them the thresholds of when they will start downgrading our credit rating, which means a higher interest bill on the Liberal credit card.
+
+What do we have to show for this? Not much. We have public services that are at breaking point. We have some of the worst health and education outcomes in the country. We have too many Tasmanians who cannot put a roof over their head and participate in the economy. We are seeing job losses and opportunities being lost for Tasmanians to the point now where we have too many young people, working-age people, leaving the state for better opportunities elsewhere. Record numbers of hardworking Tasmanians who we want here contributing to our economy, to have opportunities here, are getting on the plane each week to leave because they have lost faith in this government's ability to manage the budget and the economy.
+
+[11.39 a.m.]
+Mr BARNETT (Lyons - Treasurer) - Honourable Speaker, I stand in this place on a very important issue. Look what we have just heard. We have had an entire summer and state Labor are back again, doom and gloom. They are back. They are back with doom and gloom. They are back with talking Tasmania down. They are back with their relentless negativity. It does not stop. You have had an entire summer to do some work, put up an alternative policy and alternative budget, but you have failed yet again.
+
+You are so busy preparing to do your TikTok moves at the front of Parliament House prior to parliament today, which is exactly where Tasmanians can see through that effort because you are not taking your role seriously in this place. If you had done the work, you would have come up with the key questions and focused on the things that matter and that is what we are focused on. The Premier has made it very clear. This place, this beautiful place of Tasmania, is the best place in the world to live, to work, to raise a family, to invest.  The Premier will have more to say about all that this afternoon in the state address. I am really looking forward to that.
+
+We have, as I indicated earlier today, this global pandemic. Nobody wanted it, but we responded to it. We delivered on that with more than $2 billion in the budget expended accordingly. We had a commission of inquiry with more than 40 years. We stood up and responded to that. Established the commission, implementing the 191 recommendations, getting on with the job. Again, more than a billion dollars invested - it is in the budget.
+
+You make reference in your remarks to the public service and the public service numbers. We do need the right size. The Premier made it very clear earlier today. It should be no surprise to you. You have made reference to our fiscal strategy and to Mr Eslake. In terms of the right size and where we want to go with the fiscal strategy, it was outlined before the election. It was outlined in the budget last year on 12 September. It is written up in the revised estimates report. It is no surprise that we want to be fiscally responsible and budget-minded to ensure that we can deliver the best services possible for the people of Tasmania. We are about building foundations for Tasmania, not just for now or next year, but for years and decades to come. We want better public services that are efficient, productive, and delivering.
+
+Of course, the Labor-Greens government, when it was in government, it was slash-and-burn. They sacked a nurse a day for nine months. More than that, they closed 20 country schools. It was slash-and-burn. Of course, this is the tax-and-spend Labor party that we are talking about that are making these allegations -
+
+Mr Winter - Excuse me?
+
+Mr BARNETT - Well, there are no new taxes under our government.
+
+Mr Winter - There are. That is incorrect.
+
+Mr BARNETT - No new taxes under our government.
+
+Mr WINTER - Honourable Speaker, point of order, Standing Order 2. The minister must be accurate. The minister just said there are no new taxes. I will point you to just one. The point of consumption tax that this government introduced some years ago. There are new taxes under the government. Stop saying there are not.
+
+The SPEAKER - First of all, I was hearing one member on a point of order, not three members on a point of order. The point of order is well made in that Chapter 2 does require people to be honest in their dealings with the parliament. If the minister believes he has misled the House, he may deal with it now. Otherwise it can be the form of standard motion if the member chooses to move so. In your hands, minister.
+
+Mr BARNETT - Thank you very much, Speaker. I will make it very clear. We have announced our election policies. We back them. We are implementing them in terms of our commitment to a stronger economy. We need a strong economy to reinvest in those essential services.
+
+What has happened over the last five years in terms of the size of the public service, and the Premier has made it very clear that we have to get to the right size. In the last five years, including the COVID pandemic, we have increased our public sector headcount by close to 18 per cent. The Tasmanian population over a similar five-year period increased by only 5 per cent. Clearly, we are seeking and looking for the right size. We have made the tough calls. We are making the tough decisions. What is state Labor's position? Do they support it or are they against it? We would like to know very clearly today state Labor's position with respect to this important reform.
+
+[11.22 a.m.]
+Mr BAYLEY (Clark) - Honourable Speaker, I thank the Labor Party for this matter of public importance: debt and deficit. I think we cannot talk about debt and deficit without talking about intergenerational disadvantage and debt, about degradation, and about intergenerational drag.
+
+Financial debt is one element of that, but it is not the only element. Before I go to the finances, I want to quickly touch on the environmental degradation and drag that we are leaving our children and our grandchildren. Disgusting, toxic, salmon-related mess washing up on our beaches; increased climate-induced fires; logging that is still fuelling those fires; and climate change; and a State of the Environment Report that shows things are in a very dire state. There were 29 indicators. Of them 16, so 55 per cent, are deteriorating; 21 per cent, or six, are stable; and seven per cent, or two, are improving. Only two are improving and about 17 per cent, or five, are unknown. The government has, shockingly, simply dismissed the recommendations of the State of the Environment Report.
+
+Public services - there is a degradation of our public services, in health care, in education, in housing, and now in cuts to the public service. Efficiency dividends and vacancy controls were covert ways of cutting but now we have the government initiating direct cuts to the public service. The Greens stand in solidarity with public service workers, with unions and with others in saying that we cannot afford these cuts. We cannot afford the cuts in public services that come with this policy. We note that the government in question time today could not even quantify the savings or define non-essential services.
+
+The other degradation here is the diminution of our body politic, in integrity, in decision-making, in truth in politics. The rot sets in from the top. We have truly seen it setting in in this parliament from the top of the government. Sitting underneath all of this conversation about deficit finances is, of course, the Macquarie Point Stadium. I note the member who just resumed his seat from the Labor Party did not mention the stadium once. A billion-dollar stadium - elements of it are completely unfunded, as it as it stands at the moment, completely unassessed. We note the AFL does have the capacity to change its agreement with the state.
+
+Coming to our actual finances, the actual hard cold hard money, the Revised Estimates Report from February was truly shocking reading - an extra $500 million on our deficit up to $1.3 billion this year; a staggering $9.6 billion debt in 2028, which is going to cost us $500 million every year just to service the interest payments. Saul Eslake, who was commissioned to do an independent review of the state's finances in August, is projecting that debt to increase to $16 billion by 2035. That equals $715 million in interest payments every single year. Can we imagine the schools, the healthcare workers, the housing that we could build for that kind of investment that we are simply paying off every single year?
+
+The recommendations of Saul Eslake were completely rejected by the government. He is abundantly clear that the state we are in at the moment is not just because of COVID. It is not just because of the commission of inquiry recommendations. He is very clear that the trends began 'before the onset of the pandemic, and have continued' since.
+
+He says that there is no pathway to surplus. It is a complete furphy for the Treasurer to be pointing to a pathway to surplus. He has recommended increases in revenue, such as making our mining companies pay their fair share and pay on par with other companies in the country, to manage infrastructure spend, set a budget and prioritise your infrastructure spend under that.
+
+As a government you could not even pick up some of the simplest recommendations from Mr Eslake, things like a parliamentary budget office that operates and publishes 10-year projections. He has called efficiency dividends and vacancy control lazy and ineffective ways to manage the budget. He has pointed to the need to raise money, raise revenue, not cut costs.
+
+When it comes to the stadium, a billion-dollar stadium, Nicholas Gruen, independent economist, estimates it at well over a billion dollars. He says that it shows all 'the hallmarks of mismanagement'. KPMG has made it clear that this money to be spent on the stadium would be much better off spent on health and education. As I said, the AFL deal can be changed. It is clear that perpetual growth economics is a problem for us. We need to be investing in health, education and housing.
+
+Time expired.
+
+[11.49 a.m.]
+Mr WINTER (Franklin - Leader of the Opposition) - Honourable Speaker, this is a very important matter of public importance, obviously, because of what the government has announced over the last two days or so. What they have announced is effectively accepting responsibility for the financial mess that this budget is in. It is the first time they have finally done that.
+
+We have known that this was a problem for years. Treasury has been warning that this is a problem for years. I am holding the Tasmanian Government Fiscal Sustainability Report 2021 that Treasury released, where it raised the exact concerns that we are dealing with today. I will read from it. It says:
+
+For all scenarios analysed, the results show projected fiscal outcomes that are manageable in the short to medium-term. However, the size of the corrective action required to maintain fiscal sustainability increases over the projection period.
+
+What that says is that if you do not take action now, fixing it is going to get harder and harder. Here we are four years later with the size of corrective action meaning that they now have 2000 public servants on the chopping block. What it means is that they have wrecked the budget and are going back to 2022 levels.
+
+What happened in 2022? We had a new Premier. The new Premier took control. He said that he was going to lead a government with heart. He started taking the decisions to which Saul Eslake has now attributed all the problems we have now. In the Eslake report that came out in August last year, he said these problems are all directly attributable to the decisions made by the Tasmanian Liberal government. This is all their fault. They made every single one of these decisions that has put us into this mess.
+
+Let us put this in context. Saying that $500 million will be required just to service debt as the shadow treasurer did - let us put it into context. These are schools and hospitals that could be up and running. These are decisions that are not going to just hurt Tasmanians in the short term or medium term. These are decisions that they have made that are going to impact Tasmanians for decades to come. The only way you fix this is to deliver cash surpluses. They are so far away from that, it is just laughable.
+
+The debt keeps rising while they keep doing nothing. They have done nothing about this since 2021 when Treasury said if you do not take action now, this is going to get worse and worse and worse. Now they stand up on a Sunday, stand there casually and say, 'Oh, by the way, we're going to get rid of 2000 public servants because of decisions we have made.'
+
+The year 2022 is a mark of when Jeremy Rockliff took over this government and when things started to get even worse. Moody's came out during the break and said it is now estimating Tasmania will be credit negative. S&P and CommSec came out and said our economy is going to start contracting. Deloitte came out and said it is predicting a recession. That is what happened over the break. These are experts. You can either believe Deloitte's, Access Economics, CommSec, Saul Eslake, Moody's, Standard and Poor's, or you can believe the guy over there, the Treasurer of Tasmania.
+
+I will choose to take their advice. One of the pieces of advice that came from Saul Eslake is that things like efficiency dividends - and you can extend that out, I believe, to what you have announced on Sunday - are lazy policy approaches. They will not work. They will impact on public services.
+
+The question for the government is how much are they actually going to save from the measures that they have announced and, I believe, will announce later today? They cannot say how much they are going to save, because I still do not believe they are serious about fixing it. I think they put their own political futures ahead of Tasmania's future and the future of Tasmanian children, who will be worse off every single year because of decisions they have made. There is $500 million every year that will be coming out of schools and hospitals. That is where we would have been.
+
+They inherited the strongest set of finances in Australia from a government that left no net debt. You can laugh if you like, Leader of Government, but this was a government that inherited no net debt.
+
+Members interjecting.
+
+The SPEAKER - Order. Members on both sides, actually. It was just the right originally.
+Mr WINTER - In fact, there was $200 million worth of net cash and investments in the bank. This goes against his entire political career. The honourable Eric Abetz said in his inaugural speech to this place that this was intergenerational theft. Now he sits there on the front bench of a government that has done that to every young Tasmanian. It will not be your generation that pays for it. It will be generations of my children still paying. This will not be something that goes away. This is a reputational mark on this government they can never, ever escape from. We will not let them.
+
+By the way, the Treasurer should withdraw that comment that there has been no new tax. The point of consumption tax was introduced by Peter Gutwein, who was then treasurer under Will Hodgman's leadership and government. It is a new tax. It is incorrect and he should withdraw.
+
+[11.54 a.m.]
+Ms BURNET (Clark) - Honourable Speaker, I thank Labor for drawing our attention to this important matter. The government appears to have little interest in managing the purse strings of the state properly.
+
+Economic analysis after economic analysis - and there were more added to my list, which is really quite a short list considering how many analyses are just not even considered. They raise concerns about the state's deficit in forward Estimates rising to an estimated almost $10 billion by 2027-28, and with current financial deficit rising to $1.3 billion, according to the government's own estimates.
+
+Saul Eslake, whose independent review of state finances in August was part of the JLN deal, was summarily dismissed. Graeme Wells' and John Lawrence's reports were summarily dismissed. Health economics analyst Martyn Goddard, who points to the abject failure to address health shortfalls and not show restraint, was summarily dismissed. Most recently, the release on 1 January of the Gruen report on the cost-benefit analysis of the Macquarie Point Stadium stated that, in spite of what the Premier is saying, the stadium will be likely to cost $1.2 billion. This was also summarily dismissed. Breathtaking, I would say.
+
+I quote from the Gruen report:
+
+Tasmania is a proud state that for too long has given far more to the AFL than it has received. Tasmania deserves an AFL team and must have it at the right cost, but not at any cost. Tasmania is not a wealthy state and it must meet substantial social and economic challenges. The central conclusion of this review is that the projected costs associated with the stadium at the Macquarie Point multiple-purpose precinct have been significantly understated. At the same time, the benefits have been overstated. 
+
+This is classic mismanagement.
+
+Accordingly, the projected benefit-cost ratio has been significantly overstated. I find that the costs of the stadium development can reasonably be estimated to exceed $1 billion, with a benefit-cost ratio of 44 cents in every dollar invested by Tasmania.
+
+I might point out the blind spot Labor has with this major project and the negative financial implications for this state.
+
+We also have the issue of the Spirits and managing costs of the delayed Devonport Berth 3 infrastructure, of berthing cost blowouts in Scotland, and the impacts this has on the tourism sector, especially of the north-west and the Premier's seat of Braddon.
+
+It is at the expense of keeping people healthy, putting roofs over Tasmanians' heads, educating our children, addressing cost of living, undertaking strategic planning. We see this government inertia. Moreover, this government wants to reduce spending on the public sector with efficiency dividends that do not make sense at all. Reducing essential services is this next folly announced this week.
+
+In personal communications with Graeme Wells last year, I quote:
+
+As Saul Eslake recommends, there should be more careful prioritisation of infrastructure projects, and specifically on the Macquarie Point Stadium, why has Treasury not played a more prominent role in project evaluation? They were not initially consulted on the stadium and they offered different opinions as to what the TPC guidelines for the stadium should be.
+
+We see ineptitude from this government in financial management. We see them not taking advice, not even taking advice from their own Treasury nor from leading economists. This is a sure sign of arrogance. This is reckless fiscal management, made worse because of efficiency dividends and likely job cuts at a time that Tasmanians require strong public services. Finally, we should not be saddling intergenerational debt because of poor economic management by the Rockliff government. That is the shame.
+
+[11.59 a.m.]
+Mr BEHRAKIS (Clark) - Honourable Speaker, this MPI would count for a lot more if it was not coming from those standing opposite, who on a daily basis put out media releases complaining that we are not spending enough on X or Y, but then come into this place complaining about what is being spent; those opposite, who had a $4 billion list of election promises they promised they would fund with $2 billion in identified cuts.
+
+The great financial competence of the monumental stuff-up when, I think, Dr Broad had to correct their election costings document, I think it was 11 times. We can ask what would Labor cut, given how worried they are when they are not playing TikTok games out the front of parliament? They have done nothing to show what alternatives they have. They are no alternative government. They have provided no alternative budget, despite a motion of the House calling on them to do so. They can talk about how they would do things so differently, but they have done nothing at all to demonstrate to Tasmanians what they would do, what they would cut and what they think is being spent that should not be spent. It is clear that Labor's only policy, their number one policy, is whingeing and standing out the front on the parliament lawns being negative day after day.
+
+We know Tasmania is one of the best places to work, live and do business. Our vision is to make it even better and continue to do so, especially for the next generation. Yes, we have faced tough times: COVID-19, a major inquiry, rising living costs. However, we continue to make the right decisions and the hard decisions to protect our people and our economy. During COVID, we invested $2 billion in health, housing, food relief and rent assistance. We kept the economy moving with $3.1 billion in infrastructure, supporting 15,000 jobs. We backed local businesses with a $2.65 million trade action plan.
+
+During the commission of inquiry and after the commission of inquiry, we did not ignore the findings. We took responsibility. We invested over $1 billion to protect the most vulnerable and implement all 191 recommendations. 
+
+We supported Tasmanians with cost-of-living support: $200 energy relief for every household; school lunch programs which save families $950 a year; and no stamp duty for first-home buyers on properties up to $750,000, saving home buyers nearly $29,000. 
+
+Our economy is strong. Our unemployment is low, at around four per cent, which is half what it was when the last Labor-Greens government had control of the treasury benches. Our economy grew by 1.4 per cent last year to a record $40.6 billion, and business confidence continues to improve. Our debt is manageable and we will continue spending wisely for Tasmanians.
+
+Moving forward, we know we need to be careful. We need to continue investing in growth but also find efficiencies, like using digital technology to improve our services. We need a strong economy to do this. We continue to invest, such as in health, where we have invested $12.9 billion on more doctors, nurses and paramedics, unlike Labor. We have invested in education, investing $9.4 billion over four years upgrading 15 schools. We have recruited 60 new police officers, building three emergency hubs. We continue to back small business, tourism and agriculture.
+
+We are freezing hiring on non-essential government jobs to ensure efficiency. Essential workers - doctors, nurses, teachers, police - will still be recruited and we will continue to invest in those critical and important jobs. Unlike Labor, we will not be cutting recklessly. We will continue to make smart choices. 
+
+Labor, on the other hand, is always negative and continue to show that they have no plan. Their record is raising taxes, cutting jobs and mismanaging finances. Since Anthony Albanese became Prime Minister, Tasmanians have paid more than $20,000 in interest on the average mortgage. It really is true that it is not easy under Albanese. Last election, Labor promised, once again, $4 billion in spending but planned to cut $2 billion in essential services. 
+
+Tasmanians deserve strong, stable, responsible financial management. Our commitment is that: a strong plan, steady hands and responsible management to keep Tasmania moving forward. We will deliver for the current and future generations, and Tasmania's future is bright. Labor continues to show that they have no plan and that the people of Tasmania cannot trust them. That is the message they continue to send to them.
+
+Time expired.
+
+[12.03 p.m.]
+Ms DOW (Braddon - Deputy Leader of the Opposition) - Honourable Speaker, it is my pleasure to rise for this first parliamentary sitting for this year and speak on what is an absolute matter of public importance, debt and deficit. This government has an appalling record when it comes to budget management. The evidence of the facts and the figures are there for everybody to see. The problem this government has is nothing has really improved for Tasmanians through their budget management. You see the effects of that every single day. We are paying more for everything, but nothing is getting any better. 
+
+You only have to look at the health system. It is the worst it has ever been. Health waiting lists: you do not have to worry about locking up beds because at the moment you cannot get a bed in a hospital across Tasmania. You have 25 beds in storage in Scottsdale that have been there now for a long time: aged care beds that are not being used, just gathering dust. These could be used to reduce pressure on the acute care system for aged care patients and NDIS patients. 
+
+This government is in complete denial when it comes to budget management and the very critical position that the state finds itself in. It is a diabolical state that we find ourselves in regarding the budget and a number of other key areas. We heard from the Treasurer over the weekend about what his plan is. He has talked a lot about his pathway to surplus. We still do not know what that savings target is. The Premier was not able to provide the parliament with that update today in the House and we will seek to find out that information.
+
+Nor do we yet know what a non-essential worker is. Is it a cleaner, for example, working across, our schools or hospitals? They do a tremendous job and our system cannot do without them. Is it a ward clerk working in a very busy hospital ward, coordinating all of the services, procedures, admissions, and discharges across the hospital setting? Will the government privatise the kitchen at the LGH? We still do not really know, but that is another valuable - are they non-essential workers at the LGH, the food services staff who provide food and service to people right across our hospital settings? Will it be the assistants in nursing positions that are across our hospitals? Will it be teacher aides? We still do not know and those cuts will have significant consequences for Tasmanians in a system that is already overstretched.
+
+The government has not even had the courage to work with the union movement on the solutions that they see to some of these issues across our public sector. The government did not even have the courage to attend the meeting that was held yesterday, or the day before, about what is being proposed. You send in the unelected bureaucrats to do that. Every decision that this government has made over time has had economic consequences for Tasmanians. In particular, you can see that with the Spirit of Tasmania project. You can see that through early election after early election that we did not need and that Tasmanians did not want and through the myriad election promises. It was, as others have said, Saul Eslake's report that said that every policy decision this government has made has had a direct impact on the budget and the state of Tasmania's finances. Yet, we see no accountability and no responsibility from this government when it comes to that.
+
+You have completely lost the plot when it comes to managing this state. You only need to see that over the weekend. I mean, it was the Scottish Government that came out and ruled out the lease agreement for Spirit IV. It was not you. You were calling the back foot about it. It was stated in the media, Mr Abetz, that you were going to front up and do a press conference, and you did not even front the media in the afternoon. This government does not do its due diligence. It does not look to the finer details. You do not look to the best interest of the Tasmanian taxpayer, but to those of your party and your political survival. That is what it has always been about with this government, through election after unnecessary election, through the promises that you make and the promise after promise on infrastructure projects that you break and push out into the forward estimates. We were on the eastern shore just last week; the state of the Mornington Roundabout is a disgrace. This government has been promising to fix that for years. We had the Cam River Bridge, a commitment to build a second crossing. That is gone now because you have blown the budget and there is no ability to provide the infrastructure the community requires.
+
+Time expired.
+
+Matter noted.
+
+
+SUSPENSION OF SITTING
+
+[12.09 p.m.]
+Mr ABETZ (Franklin - Leader of the House) - Honourable Speaker, I move - 
+
+That the House do now adjourn until the ringing of the bells at 3.00 p.m. 
+
+The House suspended from 12.10 p.m. to 3.00 p.m.
+
+
+PREMIER'S ADDRESS
+
+[3.00 p.m.]
+Mr ROCKLIFF (Braddon - Premier) - Honourable Speaker, it is coming up to one year since Tasmanians elected a new Liberal government, a re-elected government with a fresh mandate, a refreshed team and new ideas. I am very proud of what has been achieved in that year.
+
+I said that I would lead a government with heart, and we are. We have delivered more than 4000 social and affordable homes. We have invested more than $500 million to help Tasmanians cope with real and painful cost-of-living pressures. We have rolled out our plan to deliver healthy lunches to even more schools. We have helped families hit by floods, farmers with drought, and rural communities to build better connections to improve mental health and wellbeing.
+
+We have done what we said we would do. We stepped up and formed government and our opponents ran the other way. We faced what was thrown at us head-on. We took responsibility. We got on fixing it. That is the Tasmanian way. That is the way that we operate.
+
+Over many years, Tasmanians have developed a quiet determination to overcome the challenges they face - not by shouting, but by listening, by working together and getting things done, determined to prove those who doubt us wrong.
+
+This year and in the years ahead we will continue to deliver our 2030 Strong Plan for Tasmania's Future. Every Tasmanian can chart our course and our progress every 100 days. We hold ourselves accountable to our plan. We have already delivered three 100-day plans. Right now we are working through our fourth. So far, we have delivered more than 1000 initiatives - more than 1000 in our first 300 days, adding to our track record of delivering for Tasmanians.
+
+In only the last 10 months, we have recruited 2300 new healthcare workers. We have cut ramping at our hospitals by more than 11,000 hours, meaning that our paramedics are getting back on the road to help Tasmanians sooner. The facts on ramping are indisputable. The time paramedics are spending at our hospitals has reduced from an average of almost 60 minutes in April last year to only 39 minutes in December. I thank all our health staff who have worked so hard to achieve these remarkable results. So much for those who said it could not be done.
+
+In education, we have employed hundreds more teachers and teacher aides. We have opened two new schools in the growing areas of Legana and Brighton. We are seeing great results from our focus on phonics as we ensure that our children are taught the literacy skills they must have in order to succeed. We now have 100 per cent of government schools using a structured phonics program in prep to year 2. It is paying off. The latest results from the year 1 phonics check now show the number of students meeting or exceeding expected phonics achievements in Tasmania has increased by five percentage points. This is making a real difference in a very short time for children, for families, and for our future. We will have a lot more to say about that in the days ahead.
+
+We have said what we intend to do, and we have done it, and we will keep doing it, keep presenting our plan, keep being accountable and keep delivering.
+
+Today, I will focus on one thing and one thing only: a strong economy; not because everything else that this government is doing is not important - it is - but because a strong economy is vital to support all those things. To govern with heart, you need a strong economy. A strong economy means that we can look after people, particularly those who need it most. We can make sure our kids get the education they need and good jobs to go to, so they can stay in Tasmania and raise their families here. We cannot do it without a strong economy. To give people the best possible opportunity to deal with cost-of-living pressures, we need a strong economy. To continue our record investment in our health system, we need a strong economy. To keep building the roads, the bridges, the schools and hospitals, we need a strong economy. To be able to implement the commission of inquiry recommendations, we need a strong economy.
+
+To ensure Tasmania continues to have a strong economy, we must back business and we must back enterprise. To do so is in the Liberal Party's DNA. Businesses create jobs, businesses create productivity. Our role is to make that as easy as possible; to get out of people's way, to maximise individual and private sector initiative, to encourage Tasmanians through incentive rather than creating limitations.
+
+Over recent weeks we have released a number of initiatives to drive change around planning regulations in our state to support housing, to grow supply and to make our planning system fairer, faster, cheaper and secure. We are now backing that attitude across other sectors, so we can keep generating new projects that will continue to support our tradies. As I have said before, if you wear a high-vis, there is no greater supporter in you than our government.
+
+We will also continue to back the thousands of small businesses across our state. In Tasmania, around 97 per cent of our businesses are small businesses. Entrepreneurs are the engine of our economy. Brand Tasmania research shows that young Australians already think Tasmania is the most entrepreneurial state. 
+
+Last year, the Business Council of Australia released its study on the best places to do business in the country. Tasmania came in number 2, after South Australia, but we must do better. We want to be number 1 - the best place to do business. There is a lot in that report to be proud of. We got high marks for things like property tax, for land use planning, for efficiency and for certainty.
+
+However, in one area we came in dead last in the country: the number of licences required to do business. The report found it takes 37 licences to open a cafe and 26 licences to open a retail shop. Clearly, a lot of resilient Tasmanians still open businesses despite these hurdles. Sure, businesses must operate safely, respect our communities and protect the environment, but 37 licences for a business that is simply trying to serve the very best flat whites and scallop pies? I mean, really, it is true. This red tape burden is a team effort. There are federal, state and local licences. Federal licences may well be out of our hands but, with our partners in local government, we can do so much better than coming eighth in the nation.
+
+In fact, in this and every element of the scorecard, we should be the best in the nation. We are a small state connected to one another. Each and every one of us wants to see businesses growing and thriving, employing Tasmanians to provide meaningful opportunities for our young people. We want to be calling out to the rest of the country, and indeed the world, that if you want to start a business and grow a business, Tasmania is the best place in Australia. Small enterprise is the core of who we are. It is an invitation to every Tasmanian and others who belong here that you can do it here.
+
+Sure, sometimes we have to say no. If you are operating unsafely or damaging the environment, if you are exploiting people or threatening our communities, no is always the right answer, but no for the sake of no is not the way to build our state. It takes a lot of time and energy, bureaucratic people power, to administer 37 or 38 licences to every business. It will be a much better use of their time to help Tasmanian entrepreneurs to yes - yes, safely and properly. Regulators can both protect but also build.
+
+We all want the same thing: high-value, growing and profitable enterprises that enrich families, communities and the state. So, in coming months, we will be stripping back licensing requirements. We will be taking a good hard look at what needs to be there and what does not. It is not just unnecessary regulation. More broadly, it is ever-growing red tape. As I travel across our state, everywhere I go, I keep hearing it. 'There is too much red tape.' Businesses hate it, and I agree, so we are taking a slasher to it. Over the coming weeks and months, we will be hunting down the red tape and regulation that is blocking growth and removing it.
+
+This will not be a one-off blitz. We are going to keep looking and keep ripping it down. We will be reaching out to businesses, big and small, right across our wonderful state so they can tell us the red tape they need to cut. 
+
+Red tape flows from the rules and regulations that are unnecessary and often outdated, like some of our laws. I firmly believe government should not be judged by the number of laws they create and regulations they impose. Indeed, it should be the exact opposite. People want government out of their lives. It has been reported that Tasmanian legislation and regulation contains 79 million words. It would take months to read them all. We will also be taking a good look at the laws and regulations on the statute books, and the ones that we can ditch. That is just the start.
+
+We will be setting aside parliamentary sitting days, especially for removing legislation. We will require ministers and regulators to remove existing regulations for every one they create. We will be making sure our regulators, as well as protecting consumers, are also supporting growth and investment. We can, we must, do both.
+
+Let me now turn to the upcoming Budget. Ten years ago we inherited an economy that was in recession and a budget that was a basket case. We set about methodically rebuilding both - 
+
+Members interjecting.
+
+The SPEAKER - Members on my left, I know it is tempting, but if you wish to stay for the speech. you must be quiet.
+
+Mr ROCKLIFF - I know you are embarrassed about it because you left us a legacy - 
+
+Ms Butler - We left money in the bank.
+
+Mr ROCKLIFF - You both left us a legacy when you were voted out comprehensively in 2014 - 
+
+The SPEAKER - Members on my left will cease interjecting. The Premier will stop inviting them.
+
+Members interjecting. 
+
+The SPEAKER - And members on my right.
+
+Mr ROCKLIFF - Under the Liberals, that debt burden was lifted. Our pro-business policies helped drive unemployment down and wages up. Then our island faced one of its mightiest challenges, a once-in-a-hundred-year global pandemic. Our response? We significantly boosted expenditure to keep Tasmanians safe, to keep Tasmanians in work. It was the right thing to do. Even our political opponents mostly agreed, but the truth is the long tail of that necessary intervention is still being felt.
+
+Now, it is important to be aware that despite this, we are in a sound economic position. We have close to the lowest level of debt-to-revenue of all the states, much better than Victoria, New South Wales, and Queensland; the interest we pay on our debt as a proportion of our budget is the second-lowest in the nation.
+
+Our debt level is manageable and, as I have said before, we could slash-and-burn to bring the budget back to surplus sooner, but we will not do that. It would cause pain and hardship for Tasmanian families; pain and hardship for vulnerable Tasmanians. It would constrict the economy and that is not what we choose. That is not our way and nor is the answer higher taxes. That is the Labor-Greens way - higher taxes - but not our way.
+
+Instead, we are repairing the impact of the pandemic over time, carefully, with consideration, with compassion and with a sensible pathway to surplus. We will keep growing the economy, increase participation, increase productivity, and increase prosperity. We do need to make sure that every single dollar of taxpayers' money is used wisely. We do need to tighten our belt where we can, and we will. We do need our State Service to be the right size, to be high performing, well-resourced and sustainable, and not spending time on time on things that they do not need to.
+
+That is why we will be undertaking a comprehensive audit of all government programs right across the board to make sure we are using resources wisely and not using resources on the things that are simply no longer the priority or where there is duplication, inefficiency, or waste. We need to make sure that every State Service job is as effective and productive as possible. We will seek out economies of scale through shared service models and look at ways to streamline and improve services, including by using digital technology to replace paper-based and manual processes.
+
+One of the biggest challenges we faced last year was due to a monumental failure of government business governance and that is why we embarked on the largest shake-up of GBE and state-owned corporations ever. In this first session of parliament, we will be progressing the first lot of those solid changes - changes designed to deliver on our election pledge, to make sure government businesses deliver services to Tasmanians at the lowest sustainable cost, while also growing our economy and engaging with business and the community in a constructive manner.
+
+The challenge we faced with the Spirits raises the important question about what businesses the government should own. I believe to answer that we must return to first principles. This is an administration founded on a belief that wherever possible, government should not compete with an efficient private sector. Why should the government own businesses when there is not an overwhelming public benefit in doing so? An excellent example of where there is indeed that overwhelming benefit is Hydro - built and owned by the government on behalf of the people of Tasmania. Indeed, our government has made sure Hydro has returned to its core principle of putting Tasmania and Tasmanians first, and we will make sure it stays that way. Hydro will always remain in public ownership.
+
+What about the others? Is government ownership really in the interests of the Tasmanian community? It is a good question and it deserves consideration. That is why we will be carrying out a detailed assessment of the benefits of moving several entities out of government ownership. We will consider whether the Motor Accidents Insurance Board would do a better job freed from the shackles of government ownership. It has happened in nearly every other state, so it is worthy of consideration.  Likewise, Metro. Is it the most efficient as a state-owned company?
+
+Members interjecting.
+
+The SPEAKER - You may take a point of order if you wish; you cannot do it from your chair. I will stop the Premier to remind members that whilst it is not a budget speech or inaugural speech, these speeches are normally held with a level of decorum and silence. I appreciate it is challenging material for members to hear, but I ask members to maintain a level of dignity in the House.
+
+Mr ROCKLIFF - Is it most efficient as a state-owned company? We will also consider a 99 year lease of TasNetworks to retain ownership, but bring in the expertise and the corporate culture to drive the organisation forward. Again, with a much sharper customer focus. We will consider whether the Tasmanian taxpayer really needs part ownership of Momentum Energy, a largely mainland electricity retailer, and whether the Land Titles Office really needs to be owned by the government.
+
+It is worth taking a look at whether there is a better way to deliver those services to Tasmanians. I know some will say these organisations return dividends to the Tasmanian government. That is a fair point, but it stands to reason that if they can provide a better outcome for Tasmanians then there is no reason to keep them under government ownership, especially when any change of ownership would have community service obligations guaranteed. You only need to look at what has happened to the Spirits to ask these questions. Of course, these measures would benefit the budget bottom line, they will pay down debt, and that is a good thing. It will help pave that sensible pathway to surplus without raising taxes.
+
+Indeed, we will look to invest the proceeds of any change in ownership in a sensible pathway to surplus future fund. It will work in much the same way as an offset account on your home loan, paying down debt while investing for the future; investing to ensure Tasmania's prosperity continues to grow over the decades to come. I have asked respected economist Saul Eslake to work with us in ensuring our review of government businesses achieves the outcomes that we need. I look forward to our team working closely with Saul to ensure we keep Tasmania on a sound economic footing.
+
+Our government's agenda will continue to firmly focus on ensuring that Tasmania's economy is strong. We will chart a sensible pathway to surplus by achieving three outcomes. First, we will boost productivity and economic growth by slashing red tape and regulation and backing business. Second, we will carefully and methodically rein in government spending. Third, we will establish a future fund using the proceeds from any sale of government-owned entities.
+
+There is a common thread in many Tasmanian success stories. It starts with a good dose of common sense; someone sees something that should be done, or at the very least, could be done a whole lot better, then come the challenges. Plenty of people telling you that it cannot be done, but that is a good way to get a Tasmanian determined to prove them wrong. That is when we persevere. That is when we work even harder, when we are even more determined. I am ambitious for this state and I am ambitious for our future. 
+
+My vision is clear and focused to ensure that Tasmania continues to be the best state in Australia. Indeed, the best place in the world to live, work, invest, and raise a family, where the economy is strong, where business is supported to keep creating good, well-paid jobs. Where the community is safe and connected. Where things are fair, where we preserve what makes this place so incredibly special, and work with all our might every day to Tasmania even better.
+
+Members - Hear, hear.
+
+The SPEAKER - I will take the opportunity to remind members that tapping on your desk is the appropriate way to signify support for something. The clapping that we have been getting into is highly unparliamentary and I find that I do not quite like it. We will be aware of that in the future. 
+
+Mr ROCKLIFF - Honourable Speaker, I lay upon the table a copy of the address.
+
+The SPEAKER - In accordance with Standing Order 351(2), I propose that the Address be noted.
+
+Debate adjourned.
+
+
+ADJOURNMENT
+
+[3.27 p.m.]
+Mr ABETZ (Franklin - Leader of the House) - Honourable Speaker, I move -
+
+That the House do now adjourn.
+
+I also indicate that in relation to the questions that were taken on notice, I trust that I will be able to provide answers tomorrow.
+
+The SPEAKER - I understand that you have answered two of them already. There is only one outstanding. Thank you.
+
+The House adjourned at 3.27 p.m.
+		
+Appendix 1
+
+		
+
+		
+Appendix 2
+
+		
+
+		
+Appendix 3
+
+
+		
+
+		
+
+		
+
+		
+Appendix 4
+
+		
+
+		
+
+		
+
+		
+Appendix 5
+
+		
+
+		
+
+		
+
+		
+
+		
+[URL: "#_Toc193718987"]
+[URL: "#_Toc193718988"]
+[URL: "#_Toc193718989"]
+[URL: "#_Toc193718990"]
+[URL: "#_Toc193718991"]
+[URL: "#_Toc193718992"]
+[URL: "#_Toc193718993"]
+[URL: "#_Toc193718994"]
+[URL: "#_Toc193718995"]
+[URL: "#_Toc193718996"]
+[URL: "#_Toc193718997"]
+[URL: "#_Toc193718998"]
+[URL: "#_Toc193718999"]
+[URL: "#_Toc193719000"]
+[URL: "#_Toc193719001"]
+[URL: "#_Toc193719002"]
+[URL: "#_Toc193719003"]
+[URL: "#_Toc193719004"]
+[URL: "#_Toc193719005"]
+[URL: "#_Toc193719006"]
+[URL: "#_Toc193719007"]
+[URL: "#_Toc193719008"]
+[URL: "#_Toc193719009"]
+[URL: "#_Toc193719010"]
+[URL: "#_Toc193719011"]
+[URL: "#_Toc193719012"]
+[URL: "#_Toc193719013"]
+[URL: "#_Toc193719014"]
+[URL: "#_Toc193719015"]
+[URL: "#_Toc193719016"]
+[URL: "#_Toc193719017"]
+[URL: "#_Toc193719018"]
+[URL: "#_Toc193719019"]
+[URL: "#_Toc193719020"]
+[URL: "#_Toc193719021"]
+[URL: "#_Toc193719022"]
+[URL: "#_Toc193719023"]
+[URL: "#_Toc193719024"]
+[URL: "#_Toc193719025"]
+[URL: "#_Toc193719026"]
+[URL: "#_Toc193719027"]
+[URL: "#_Toc193719028"]
+[URL: "#_Toc193719029"]
+[URL: "#_Toc193719030"]
+[URL: "#_Toc193719031"]
+[URL: "#_Toc193719032"]
+[URL: "#_Toc193719033"]
+[URL: "#_Toc193719034"]
+[URL: "#_Toc193719035"]
+[URL: "#_Toc193719036"]
+[URL: "#_Toc193719037"]
+[URL: "#_Toc193719038"]
+[URL: "#_Toc193719039"]
+[URL: "#_Toc193719040"]
+[URL: "#_Toc193719041"]
+[URL: "#_Toc193719042"]
+[URL: "#_Toc193719043"]
+[URL: "#_Toc193719044"]
+[URL: "#_Toc193719045"]
+[URL: "#_Toc193719046"]
+[URL: "#_Toc193719047"]
+[URL: "#_Toc193719048"]
+[URL: "#_Toc193719049"]
+[URL: "#_Toc193719050"]
+[URL: "#_Toc193719051"]
+[URL: "#_Toc193719052"]
+[URL: "#_Toc193719053"]
+[URL: "#_Toc193719054"]
+[URL: "#_Toc193719055"]
+[URL: "#_Toc193719056"]
+[URL: "#_Toc193719057"]
+[URL: "#_Toc193719058"]
+
+
+
+
+	
+
+	1	Tuesday 4 March 2025
+[Footnotes: 
+
+][Endnotes: 
+
+]
