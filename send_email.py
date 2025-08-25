@@ -241,44 +241,5 @@ def build_digest(files, keywords):
 
     return "\n".join(body_lines), total_matches
 
-
-# --- Main ---
-
-def main():
-    EMAIL_USER = os.environ["EMAIL_USER"]
-    EMAIL_PASS = os.environ["EMAIL_PASS"]
-    EMAIL_TO   = os.environ["EMAIL_TO"]
-
-    keywords = load_keywords()
-    if not keywords:
-        raise SystemExit("No keywords found (keywords.txt or KEYWORDS env var).")
-
-    files = sorted(glob.glob("transcripts/*.txt"))
-    if not files:
-        raise SystemExit("No transcripts found in transcripts/")
-
-    body, total_hits = build_digest(files, keywords)
-
-    subject = f"Hansard keyword digest — {datetime.now().strftime('%d %b %Y')}"
-    to_list = [addr.strip() for addr in re.split(r"[,\s]+", EMAIL_TO) if addr.strip()]
-
-    yag = yagmail.SMTP(
-        user=EMAIL_USER,
-        password=EMAIL_PASS,
-        host="smtp.gmail.com",
-        port=587,
-        smtp_starttls=True,
-        smtp_ssl=False,
-    )
-
-    yag.send(
-        to=to_list,
-        subject=subject,
-        contents=body,
-        attachments=files,
-    )
-    print(f"✅ Email sent to {EMAIL_TO} with {len(files)} file(s), {total_hits} match(es).")
-
-
 if __name__ == "__main__":
     main()
