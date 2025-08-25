@@ -1,148 +1,123 @@
 #!/usr/bin/env python3
 """
-Scan Tas Parliament search for latest House of Assembly items,
-download any *new* transcripts as TXT, and remember what we've seen.
+Scan the Hansard "Quick Search" by current (Hobart) year and download any
+transcripts not yet in transcripts/ as .txt via the viewer's "As Text" option.
 
-Env (optional):
-  MAX_RESULTS: how many results to scan (default: 10)
-  WAIT_BEFORE_DOWNLOAD_SECONDS: delay before clicking Download (default: 15)
+Environment (optional):
+  WAIT_BEFORE_DOWNLOAD_SECONDS   default "15"
+  MAX_PAGES                      default "5"
+  HOUSE_PREFIX                   e.g. "House of Assembly" to filter titles
 """
 
-import json
 import os
 import re
-from datetime import datetime, timezone
 from pathlib import Path
+from time import sleep
+from datetime import datetime
+from zoneinfo import ZoneInfo
+
 from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
 
 ROOT = Path(__file__).parent.resolve()
-TRANSCRIPTS = ROOT / "transcripts"
-STATE_DIR = ROOT / "state"
-SEEN_FILE = STATE_DIR / "seen.json"
-TRANSCRIPTS.mkdir(exist_ok=True)
-STATE_DIR.mkdir(exist_ok=True)
+OUT_DIR = ROOT / "transcripts"
+OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-MAX_RESULTS = int(os.environ.get("MAX_RESULTS", "10"))
-WAIT_BEFORE = int(os.environ.get("WAIT_BEFORE_DOWNLOAD_SECONDS", "15"))
+WAIT_BEFORE_DOWNLOAD = int(os.environ.get("WAIT_BEFORE_DOWNLOAD_SECONDS", "15"))
+MAX_PAGES = int(os.environ.get("MAX_PAGES", "5"))
+HOUSE_PREFIX = os.environ.get("HOUSE_PREFIX", "").strip()  # e.g. "House of Assembly"
 
-def sanitize(name: str) -> str:
-    safe = re.sub(r"[^a-zA-Z0-9._ -]", "_", name).strip()
-    safe = re.sub(r"\s+", " ", safe)
-    return safe
+HOBART_TZ = ZoneInfo("Australia/Hobart")
 
-def load_seen():
-    if SEEN_FILE.exists():
-        try:
-            return json.loads(SEEN_FILE.read_text(encoding="utf-8"))
-        except Exception:
-            return {}
-    return {}
+def sanitise_filename(name: str) -> str:
+    return re.sub(r"[^a-zA-Z0-9._-]+", "_", name).strip("_") + ".txt"
 
-def save_seen(seen):
-    SEEN_FILE.write_text(json.dumps(seen, indent=2, ensure_ascii=False), encoding="utf-8")
-
-def scan_and_download():
-    seen = load_seen()
-    downloaded = []
+def download_current_year_new():
+    year = datetime.now(HOBART_TZ).year
+    url = "https://www.parliament.tas.gov.au/hansard"
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         context = browser.new_context(accept_downloads=True)
+        context.set_default_timeout(60000)
         page = context.new_page()
 
-        print("Opening search home…")
-        page.goto("https://search.parliament.tas.gov.au/search/", wait_until="domcontentloaded")
-        page.wait_for_selector("#isys_edt_search", timeout=30000)
+        print(f"Opening Hansard home… ({url})")
+        page.goto(url, wait_until="domcontentloaded")
 
-        # Ensure we search Hansard for House of Assembly
-        try:
-            page.fill("#isys_edt_search", "AUTHOR CONTAINS (House of Assembly)")
-        except PWTimeout:
-            pass
+        # Quick Search form:
+        # form#queryForm with input#value[name="IW_FIELD_ADVANCE_PHRASE"]
+        page.wait_for_selector('#queryForm', timeout=30000)
+        page.wait_for_selector('#value', timeout=30000)
+        page.fill('#value', str(year))
+        page.click('#queryForm button[type="submit"]')
 
-        print("Submitting search…")
-        page.click("#isys_btn_search_hdr")
-        page.wait_for_selector("table.results-table", timeout=30000)
-
-        # Try to sort by Date if the quick link is present
-        try:
-            page.click("a[href*='/datetime/sort/']", timeout=5000)
-            page.wait_for_load_state("networkidle")
-            page.wait_for_selector("table.results-table", timeout=10000)
-        except Exception:
-            pass
-
-        rows = page.locator("table.results-table tr")
-        total = rows.count()
-        to_check = min(total, MAX_RESULTS)
-        print(f"Found {total} results; checking top {to_check}…")
-
-        for i in range(to_check):
-            row = rows.nth(i)
-            title_link = row.locator("a[onclick^='isys.viewer.show']").first
-            docx_link = row.locator("a[id^='isys_var_url_']").first  # "Download Document" link
-
+        total_downloaded = 0
+        page_num = 1
+        while page_num <= MAX_PAGES:
+            print(f"Scanning results page {page_num}…")
             try:
-                title = title_link.inner_text().strip()
-            except Exception:
-                continue
+                page.wait_for_selector('a[href*="/doc/"]', timeout=30000)
+            except PWTimeout:
+                print("No results on this page.")
+                break
 
-            # Prefer a stable key from the docx href if present
-            key = None
-            try:
-                href = docx_link.get_attribute("href")
-                if href:
-                    key = href  # e.g. /search/isysquery/.../doc/HA Tuesday 19 August 2025.docx
-            except Exception:
-                pass
-            if not key:
-                key = title
+            # Title links (avoid green DOCX link)
+            result_links = page.locator('td.resultColumnB a[href*="/doc/"]')
+            count = result_links.count()
+            if count == 0:
+                print("No result links found.")
+                break
 
-            safe_title = sanitize(title)
-            out_path = TRANSCRIPTS / f"{safe_title}.txt"
+            for i in range(count):
+                link = result_links.nth(i)
+                title = link.inner_text().strip()
 
-            # Skip if already known/seen OR already saved in transcripts/
-            if key in seen or out_path.exists():
-                print(f"  • Already have: {title}")
-                seen[key] = seen.get(key, {"title": title, "saved": "preexisting"})
-                continue
+                if HOUSE_PREFIX and not title.startswith(HOUSE_PREFIX):
+                    continue
 
-            print(f"  • NEW: {title} — opening viewer…")
-            title_link.click()
-            page.wait_for_selector("#viewer_toolbar", timeout=40000)
+                out_path = OUT_DIR / sanitise_filename(title)
+                if out_path.exists():
+                    continue
 
-            # Give the viewer time to wire up
-            page.wait_for_timeout(WAIT_BEFORE * 1000)
+                print(f"→ Opening: {title}")
+                link.click()
 
-            # Open the Download menu
-            page.click("#viewer_toolbar .btn.btn-download", timeout=30000)
+                # Viewer toolbar overlay
+                page.wait_for_selector('#viewer_toolbar', timeout=60000)
 
-            # Click "As Text" and save
-            page.wait_for_selector("#viewer_toolbar_download li", timeout=20000)
-            with page.expect_download() as dl_info:
-                page.click("#viewer_toolbar_download li:has-text('As Text')", timeout=20000)
-            download = dl_info.value
-            download.save_as(out_path)
-            print(f"    ✅ Saved: {out_path.name}")
+                # Safety delay
+                print(f"   Waiting {WAIT_BEFORE_DOWNLOAD}s before download…")
+                sleep(WAIT_BEFORE_DOWNLOAD)
 
-            downloaded.append(str(out_path))
-            seen[key] = {
-                "title": title,
-                "saved": datetime.now(timezone.utc).isoformat()
-            }
+                # Open download menu
+                page.click('#viewer_toolbar .btn.btn-download, div[onclick*="downloadMenu"]')
 
-            # Close viewer
-            try:
-                page.click("#viewer_toolbar .btn.btn-close", timeout=5000)
-                page.wait_for_timeout(300)
-            except Exception:
-                pass
+                # Choose "As Text"
+                page.wait_for_selector('#viewer_toolbar_download li:has-text("As Text")', timeout=60000)
+                with page.expect_download(timeout=60000) as dl:
+                    page.click('#viewer_toolbar_download li:has-text("As Text")')
+                download = dl.value
+                download.save_as(str(out_path))
+                print(f"   ✅ Saved: {out_path.name}")
+                total_downloaded += 1
 
-        save_seen(seen)
-        print(f"Done. New downloads this run: {len(downloaded)}")
-        if downloaded:
-            # Write list for the email step
-            (ROOT / "new_files.txt").write_text("\n".join(downloaded), encoding="utf-8")
+                # Close viewer
+                try:
+                    page.click('#viewer_toolbar .btn.btn-close')
+                    sleep(0.5)
+                except PWTimeout:
+                    pass
+
+            # Next page?
+            next_btn = page.locator('#isys_var_nextbatch, a.page:has-text("Next")')
+            if next_btn.count() > 0 and next_btn.first.is_visible():
+                next_btn.first.click()
+                page_num += 1
+            else:
+                break
+
+        browser.close()
+        print(f"Done. New downloads this run: {total_downloaded}")
 
 if __name__ == "__main__":
-    scan_and_download()
+    download_current_year_new()
