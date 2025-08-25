@@ -1,132 +1,109 @@
 #!/usr/bin/env python3
 """
-send_email.py
+Email digests for all newly downloaded transcripts in this run.
 
-Send a summary email for newly downloaded Hansard transcripts.  The script reads
-``.last_run_manifest.json`` (written by ``download_transcript.py``) to discover
-which files were saved in the latest run.  If no new files were saved the script
-prints a message and exits without sending anything.
+Inputs:
+  - new_files.txt (one path per line), created by scan_and_download.py
+  - keywords from keywords.txt OR KEYWORDS env (comma-separated)
 
-Environment variables (all optional unless noted):
-  EMAIL_USER (required)  username/from address
-  EMAIL_PASS (required)  password or app password
-  EMAIL_TO   (required)  comma/space/semicolon separated recipient list
-  SMTP_HOST               default "smtp.gmail.com"
-  SMTP_PORT               default "465"
+Secrets (GitHub Actions):
+  EMAIL_USER, EMAIL_PASS, EMAIL_TO
 
-If a ``keywords.txt`` file (or ``KEYWORDS`` env var) is present, any matched
-keywords are noted beside each filename in the email body.
+Optional:
+  PARAGRAPH_RADIUS = "0" or "1"
 """
 
-from __future__ import annotations
-
-import json
 import os
 import re
-from datetime import datetime
+from datetime import datetime, UTC
 from pathlib import Path
-from zoneinfo import ZoneInfo
-
 import yagmail
 
 ROOT = Path(__file__).parent.resolve()
-MANIFEST_PATH = ROOT / ".last_run_manifest.json"
 
+EMAIL_USER = os.environ["EMAIL_USER"]
+EMAIL_PASS = os.environ["EMAIL_PASS"]
+EMAIL_TO   = os.environ["EMAIL_TO"]
+PARAGRAPH_RADIUS = int(os.environ.get("PARAGRAPH_RADIUS", "0"))
 
-def load_keywords() -> list[tuple[re.Pattern, str]]:
-    """Load keywords from a file or KEYWORDS env var."""
-    file_path = Path(os.environ.get("KEYWORDS_FILE", "keywords.txt"))
-    raw_terms: list[str] = []
-    if file_path.exists():
-        for line in file_path.read_text(encoding="utf-8").splitlines():
-            line = line.strip()
-            if not line or line.startswith("#"):
-                continue
-            if (line.startswith('"') and line.endswith('"')) or (
-                line.startswith("'") and line.endswith("'")
-            ):
-                line = line[1:-1]
-            raw_terms.append(line)
+def load_keywords():
+    # ENV takes priority so you can drive tests from the workflow
+    env = os.environ.get("KEYWORDS", "")
+    if env.strip():
+        return [k.strip() for k in env.split(",") if k.strip()]
+    fpath = ROOT / "keywords.txt"
+    if fpath.exists():
+        kws = [ln.strip() for ln in fpath.read_text(encoding="utf-8", errors="ignore").splitlines() if ln.strip()]
+        if kws:
+            return kws
+    return ["budget", "health", "education", "climate"]
 
-    if not raw_terms:
-        env_val = os.environ.get("KEYWORDS", "")
-        pieces = [p.strip() for p in re.split(r"[,\n]", env_val) if p.strip()]
-        raw_terms.extend(pieces)
+KEYWORDS = load_keywords()
+pattern = re.compile(r"\b(" + "|".join(re.escape(k) for k in KEYWORDS) + r")\b", re.IGNORECASE)
 
-    patterns: list[tuple[re.Pattern, str]] = []
-    for term in raw_terms:
-        pat = re.compile(re.escape(term), re.IGNORECASE)
-        patterns.append((pat, term))
-    return patterns
+def split_paragraphs(txt: str):
+    return [p.strip() for p in re.split(r"\r?\n\s*\r?\n", txt) if p.strip()]
 
+def digest_for(text: str, radius: int):
+    paras = split_paragraphs(text)
+    hits = []
+    for i, p in enumerate(paras):
+        if pattern.search(p):
+            start = max(0, i - radius)
+            end = min(len(paras), i + radius + 1)
+            hits.append("\n\n".join(paras[start:end]))
+    # dedupe preserving order
+    seen, uniq = set(), []
+    for h in hits:
+        if h not in seen:
+            uniq.append(h)
+            seen.add(h)
+    return uniq
 
-def load_manifest() -> dict:
-    if not MANIFEST_PATH.exists():
-        return {}
-    try:
-        return json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
-    except Exception:
-        return {}
-
-
-def parse_recipients(raw: str) -> list[str]:
-    return [p for p in re.split(r"[;,\s]+", raw) if p]
-
-
-def main() -> None:
-    manifest = load_manifest()
-    new_count = manifest.get("new_count", 0)
-    if new_count == 0:
-        print("No new downloads this run; email not sent.")
+def main():
+    list_file = ROOT / "new_files.txt"
+    if not list_file.exists():
+        print("No new_files.txt — nothing new this run.")
         return
 
-    EMAIL_USER = os.getenv("EMAIL_USER", "").strip()
-    EMAIL_PASS = os.getenv("EMAIL_PASS", "").strip()
-    EMAIL_TO = os.getenv("EMAIL_TO", "").strip()
-    SMTP_HOST = os.getenv("SMTP_HOST", "smtp.gmail.com")
-    SMTP_PORT = int(os.getenv("SMTP_PORT", "465"))
-
-    if not (EMAIL_USER and EMAIL_PASS and EMAIL_TO):
-        print("Missing email credentials; skipping email send.")
+    files = [ln.strip() for ln in list_file.read_text(encoding="utf-8").splitlines() if ln.strip()]
+    if not files:
+        print("new_files.txt empty.")
         return
 
-    to_list = parse_recipients(EMAIL_TO)
-    keywords = load_keywords()
+    sections = []
+    attachments = []
+    total_matches = 0
 
-    hobart = datetime.now(ZoneInfo("Australia/Hobart")).strftime("%Y-%m-%d %H:%M %Z")
-    subject = f"Hansard updates – {new_count} new – {hobart}"
+    for path in files:
+        p = Path(path)
+        if not p.exists():
+            continue
+        txt = p.read_text(encoding="utf-8", errors="ignore")
+        snippets = digest_for(txt, PARAGRAPH_RADIUS)
+        total_matches += len(snippets)
+        header = f"===== {p.name} =====\nMatches: {len(snippets)}\n"
+        body = "\n\n".join(f"• Match {i+1}\n{sn}" for i, sn in enumerate(snippets)) if snippets else "No keywords matched."
+        sections.append(header + body + "\n")
+        attachments.append(str(p))
 
-    lines = [f"{new_count} new transcript(s) downloaded at {hobart}.", ""]
-    attachments: list[Path] = []
-    for chamber, files in manifest.get("new_by_house", {}).items():
-        lines.append(f"{chamber}:")
-        for rel in files:
-            p = ROOT / rel
-            attachments.append(p)
-            kw_hits: list[str] = []
-            if keywords and p.exists():
-                text = p.read_text(encoding="utf-8", errors="ignore")
-                for pat, disp in keywords:
-                    if pat.search(text):
-                        kw_hits.append(disp)
-            if kw_hits:
-                lines.append(f"  • {Path(rel).name} (keywords: {', '.join(sorted(set(kw_hits)))} )")
-            else:
-                lines.append(f"  • {Path(rel).name}")
-        lines.append("")
+    timestamp = datetime.now(UTC).strftime("%Y-%m-%d %H:%M UTC")
+    subject = f"Hansard: {len(files)} new transcript(s) — {total_matches} match(es)"
+    preface = (
+        f"Time: {timestamp}\n"
+        f"Keywords: {', '.join(KEYWORDS)}\n"
+        f"PARAGRAPH_RADIUS: {PARAGRAPH_RADIUS}\n\n"
+        "=== EXCERPTS ===\n\n"
+    )
 
-    body = "\n".join(lines).strip()
-
-    try:
-        yag = yagmail.SMTP(
-            user=EMAIL_USER, password=EMAIL_PASS, host=SMTP_HOST, port=SMTP_PORT, smtp_ssl=True
-        )
-        yag.send(to=to_list, subject=subject, contents=body, attachments=attachments)
-        print(f"Email sent to {', '.join(to_list)} with {len(attachments)} attachment(s).")
-    except Exception as e:
-        print(f"Failed to send email: {e}")
-
+    yag = yagmail.SMTP(EMAIL_USER, EMAIL_PASS)
+    yag.send(
+        to=EMAIL_TO,
+        subject=subject,
+        contents=preface + "\n".join(sections) + "\n(Full transcripts attached.)",
+        attachments=attachments
+    )
+    print(f"✅ Email sent to {EMAIL_TO} for {len(files)} file(s), {total_matches} match(es).")
 
 if __name__ == "__main__":
     main()
-
