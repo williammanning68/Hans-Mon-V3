@@ -13,8 +13,6 @@ Env:
   EMAIL_USER   (required)
   EMAIL_PASS   (required)
   EMAIL_TO     (required) comma-separated allowed
-  SMTP_HOST    (required) e.g. smtp.gmail.com
-  SMTP_PORT    (required) e.g. 587
   KEYWORDS_FILE        (optional, default "keywords.txt")
   KEYWORDS             (optional, fallback list if file not present)
   SCAN_WINDOW_HOURS    (optional, e.g. "26")
@@ -167,8 +165,6 @@ def main():
     EMAIL_USER = os.environ["EMAIL_USER"]
     EMAIL_PASS = os.environ["EMAIL_PASS"]
     EMAIL_TO = os.environ["EMAIL_TO"]
-    SMTP_HOST = os.environ["SMTP_HOST"]
-    SMTP_PORT = int(os.environ["SMTP_PORT"])
 
     patterns = load_keywords()
     if not patterns:
@@ -189,7 +185,12 @@ def main():
 
     # Send
     to_list = [addr.strip() for addr in re.split(r"[,\s]+", EMAIL_TO) if addr.strip()]
-    yag = yagmail.SMTP(user=EMAIL_USER, password=EMAIL_PASS, host=SMTP_HOST, port=SMTP_PORT, smtp_starttls=True)
+    yag = yagmail.SMTP(
+        user=EMAIL_USER,
+        password=EMAIL_PASS,
+        host=os.environ.get("SMTP_HOST"),
+        port=os.environ.get("SMTP_PORT"),
+    )
 
     yag.send(
         to=to_list,
