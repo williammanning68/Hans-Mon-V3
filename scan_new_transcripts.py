@@ -6,7 +6,7 @@ transcripts not yet in transcripts/ as .txt via the viewer's "As Text" option.
 Environment (optional):
   WAIT_BEFORE_DOWNLOAD_SECONDS   default "15"
   MAX_PAGES                      default "5"
-  HOUSE_PREFIX                   e.g. "House of Assembly" to filter titles
+  HOUSE_PREFIX                   e.g. "House of Assembly" "Legislative Council" to filter titles
 """
 
 import os
@@ -24,7 +24,7 @@ OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 WAIT_BEFORE_DOWNLOAD = int(os.environ.get("WAIT_BEFORE_DOWNLOAD_SECONDS", "15"))
 MAX_PAGES = int(os.environ.get("MAX_PAGES", "5"))
-HOUSE_PREFIX = os.environ.get("HOUSE_PREFIX", "").strip()  # e.g. "House of Assembly"
+HOUSE_PREFIX = os.environ.get("HOUSE_PREFIX", "").strip()  # e.g. "House of Assembly" "Legislative Council"
 
 HOBART_TZ = ZoneInfo("Australia/Hobart")
 
