@@ -1,107 +1,89 @@
-name: Scan new Hansard transcripts
+# .github/workflows/scan_new.yml
+name: Scan & email new Hansard transcripts
 
 on:
-  workflow_dispatch: {}
-  # Uncomment to run automatically on a schedule (UTC).
-  # For every 2 hours:
-  # schedule:
-  #   - cron: "0 */2 * * *"
+  workflow_dispatch:
+    inputs:
+      year:
+        description: 'Override year (optional). Leave blank to use current year.'
+        required: false
+      max_pages:
+        description: 'Max results pages to scan (default 5).'
+        required: false
+  schedule:
+    - cron: "*/30 * * * *"   # every 30 minutes; adjust or remove as you like
 
 permissions:
   contents: write
 
 concurrency:
-  group: scan-hansard
-  cancel-in-progress: false
+  group: scan_hansard
+  cancel-in-progress: true
+
+env:
+  PYTHONUNBUFFERED: "1"
+  KEYWORDS_FILE: "keywords.txt"       # used by send_email.py
+  YEAR: "${{ github.event.inputs.year }}"
+  MAX_PAGES: "${{ github.event.inputs.max_pages }}"
 
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
-
     steps:
-      - name: Checkout
+      - name: Checkout (with history for committing)
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.13"
           cache: "pip"
-          cache-dependency-path: |
-            requirements.txt
 
-      - name: Install dependencies
+      - name: Install deps (Python + Playwright browser)
         run: |
           python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then
-            python -m pip install -r requirements.txt
-          else
-            python -m pip install playwright yagmail python-dotenv
-          fi
+          pip install -r requirements.txt
           python -m playwright install chromium
 
-      - name: Run scanner
-        id: scan
-        env:
-          # Tweak waits/retries if needed; your script reads these.
-          WAIT_BEFORE_DOWNLOAD_SECONDS: "15"
-          # Optional: limit pages per house on first runs to keep time short
-          # MAX_PAGES_PER_HOUSE: "5"
+      - name: Run quick-search scanner
         run: |
-          set -e
           python scan_new_transcripts.py
 
-          # Parse manifest and export outputs for downstream steps
-          python - <<'PY'
-          import json, os, sys
-          from pathlib import Path
-          root = Path(".")
-          manifest_path = root / ".last_run_manifest.json"
-          out = os.environ["GITHUB_OUTPUT"]
-          new_downloads = 0
-          digest_path = ""
-          if manifest_path.exists():
-              try:
-                  data = json.loads(manifest_path.read_text(encoding="utf-8"))
-                  new_downloads = int(data.get("new_count", 0) or 0)
-                  digest_path = (data.get("digest_path") or "").strip()
-              except Exception:
-                  pass
-          if not digest_path:
-              # Fallback to newest file in digests/
-              dig = root / "digests"
-              if dig.exists():
-                  txts = sorted(dig.glob("*.txt"), key=lambda p: p.stat().st_mtime, reverse=True)
-                  if txts:
-                      digest_path = str(txts[0])
-
-          with open(out, "a", encoding="utf-8") as f:
-              print(f"new_downloads={new_downloads}", file=f)
-              print(f"digest_path={digest_path}", file=f)
-          print(f"Detected new_downloads={new_downloads}")
-          if digest_path:
-              print(f"Digest path: {digest_path}")
-          PY
-
-      - name: Commit new transcripts and digest
+      - name: Stage and detect new files
+        id: changes
+        shell: bash
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add "transcripts/House of Assembly"/*.txt 2>/dev/null || true
-          git add "transcripts/Legislative Council"/*.txt 2>/dev/null || true
-          git add digests/*.txt 2>/dev/null || true
-          git add .last_run_manifest.json 2>/dev/null || true
-          git commit -m "New transcripts (auto)" || echo "No changes to commit"
-          git push || true
+          # add any new or updated transcript files
+          git add transcripts/** || true
 
-      - name: Email digest (only when new files)
-        if: steps.scan.outputs.new_downloads != '0'
-        env:
-          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
-          EMAIL_TO: ${{ secrets.EMAIL_TO }}
-          EMAIL_APP_PASSWORD: ${{ secrets.EMAIL_APP_PASSWORD }}
-          EMAIL_SUBJECT_PREFIX: "[Hansard]"
-          # ATTACH_TRANSCRIPTS: "true"   # uncomment if you also want full transcripts attached
+          NEW_FILES="$(git diff --cached --name-only | grep '^transcripts/' || true)"
+          echo "new_files<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$NEW_FILES" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
+          COUNT=$(echo "$NEW_FILES" | sed '/^\s*$/d' | wc -l)
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+
+          if [ "$COUNT" -eq 0 ]; then
+            echo "No new transcripts to commit."
+          fi
+
+      - name: Commit & push
+        if: steps.changes.outputs.count != '0'
         run: |
-          python send_email.py --digest "${{ steps.scan.outputs.digest_path }}"
+          git commit -m "New transcripts (auto)"
+          git push
+
+      - name: Send digest email (only when new files)
+        if: steps.changes.outputs.count != '0'
+        env:
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+          EMAIL_TO:   ${{ secrets.EMAIL_TO }}
+          NEW_FILES:  ${{ steps.changes.outputs.new_files }}
+        run: |
+          python send_email.py
