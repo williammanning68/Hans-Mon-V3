@@ -2,10 +2,12 @@
 """
 download_transcript.py
 
-Scrape the Tasmanian Parliament Hansard "Quick Search" for a given term (defaults to
-the current year in Australia/Hobart), download **all** matching transcripts as text,
-sort them into chamber folders, and (optionally) send an email **only if** at least
-one brand-new transcript was saved (i.e., not already present in the repository).
+Scrape the Tasmanian Parliament Hansard "Quick Search" for a given term.  By
+default the script automatically searches for the **current year** (derived from the
+Australia/Hobart timezone), so no annual update is required.  It downloads all
+matching transcripts as text, sorts them into chamber folders, and (optionally)
+sends an email **only if** at least one brand-new transcript was saved (i.e., not
+already present in the repository).
 
 Requires: playwright
     pip install playwright
@@ -237,14 +239,15 @@ def run(query: Optional[str] = None) -> int:
         # Go to landing page and submit Quick Search
         page.goto(hansard_page, wait_until="domcontentloaded")
         try:
-            page.wait_for_selector('form#queryForm input[name="IW_FIELD_ADVANCE_PHRASE"]', timeout=30000)
+            page.wait_for_selector('#queryForm #value', timeout=30000)
         except PWTimeout:
             print("❌ Could not find Quick Search input on the Hansard landing page.")
             browser.close()
             return 2
 
-        page.fill('form#queryForm input[name="IW_FIELD_ADVANCE_PHRASE"]', search_term)
-        page.keyboard.press("Enter")
+        # Use the site's "Quick Search" field (id="value") and submit the form explicitly
+        page.fill('#queryForm #value', search_term)
+        page.click('#queryForm button[type="submit"]')
 
         # Wait for some results to show
         try:
