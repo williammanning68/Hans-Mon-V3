@@ -59,6 +59,7 @@ CHAMBER_DIRS = {
 for p in CHAMBER_DIRS.values():
     p.mkdir(parents=True, exist_ok=True)
 INDEX_PATH.parent.mkdir(parents=True, exist_ok=True)
+MANIFEST_PATH = ROOT / ".last_run_manifest.json"
 
 def default_query() -> str:
     tz = ZoneInfo(TZ_NAME)
@@ -302,11 +303,18 @@ def run(query: Optional[str] = None) -> int:
     # Persist index
     save_seen_index(seen_index)
 
-    # Summary & optional email
+    # Summary, manifest, & optional email
     if new_saves:
         print(f"\n✅ New transcripts saved this run: {len(new_saves)}")
         for pth in new_saves:
             print(f"   - {pth.relative_to(ROOT)}")
+
+        # Build manifest grouping files by chamber (for email step)
+        manifest = {"new_count": len(new_saves), "new_by_house": {}}
+        for p in new_saves:
+            chamber = p.parent.name.replace("_", " ")
+            manifest["new_by_house"].setdefault(chamber, []).append(str(p.relative_to(ROOT)))
+        MANIFEST_PATH.write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8")
 
         if SEND_EMAIL_IF_NEW:
             send_email_path = ROOT / "send_email.py"
