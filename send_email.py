@@ -117,7 +117,7 @@ def build_email_body(files: List[Path], patterns: List[Tuple[re.Pattern, str]],
 def main():
     EMAIL_USER = os.environ["EMAIL_USER"]
     EMAIL_PASS = os.environ["EMAIL_PASS"]
-    EMAIL_TO = os.environ["EMAIL_TO"]
+    EMAIL_TO   = os.environ["EMAIL_TO"]
 
     patterns = load_keywords()
     if not patterns:
@@ -137,15 +137,14 @@ def main():
 
     to_list = [addr.strip() for addr in re.split(r"[,\s]+", EMAIL_TO) if addr.strip()]
 
-    # ✅ Flexible SMTP: defaults to Gmail if no host/port set
-    host = os.environ.get("SMTP_HOST") or "smtp.gmail.com"
-    port = int(os.environ.get("SMTP_PORT") or 587)
-
+    # ✅ Force STARTTLS on port 587 (fixes handshake error)
     yag = yagmail.SMTP(
         user=EMAIL_USER,
         password=EMAIL_PASS,
-        host=host,
-        port=port,
+        host="smtp.gmail.com",
+        port=587,
+        smtp_starttls=True,
+        smtp_ssl=False,
     )
 
     yag.send(
@@ -154,7 +153,7 @@ def main():
         contents=body,
         attachments=[str(p) for p in files],
     )
-    print("✅ Email sent.")
+    print(f"✅ Email sent to {EMAIL_TO} with {len(files)} file(s).")
 
 
 if __name__ == "__main__":
