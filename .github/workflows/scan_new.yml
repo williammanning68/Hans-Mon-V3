@@ -48,14 +48,12 @@ jobs:
           git push
 
       # OPTIONAL: if you want to email after downloads, keep your existing send step here
-      # - name: Install email deps
-      #   run: python -m pip install yagmail python-dateutil
-      # - name: Send keyword digest email
-      #   env:
-      #     EMAIL_USER: ${{ secrets.EMAIL_USER }}
-      #     EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
-      #     EMAIL_TO:   ${{ secrets.EMAIL_TO }}
-      #     SMTP_HOST:  ${{ secrets.SMTP_HOST }}
-      #     SMTP_PORT:  ${{ secrets.SMTP_PORT }}
-      #     KEYWORDS:   ${{ vars.KEYWORDS }}   # or use a keywords.txt file, per your current script
-      #   run: python send_email.py
+       - name: Install email deps
+         run: python -m pip install yagmail python-dateutil
+       - name: Send keyword digest email
+         env:
+           EMAIL_USER: ${{ secrets.EMAIL_USER }}
+           EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+           EMAIL_TO:   ${{ secrets.EMAIL_TO }}
+           KEYWORDS:   ${{ vars.KEYWORDS }}   # or use a keywords.txt file, per your current script
+         run: python send_email.py
