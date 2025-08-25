@@ -240,6 +240,3 @@ def build_digest(files, keywords):
         body_lines.append("(Full transcript(s) attached.)")
 
     return "\n".join(body_lines), total_matches
-
-if __name__ == "__main__":
-    main()
