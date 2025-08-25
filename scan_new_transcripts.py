@@ -1,332 +1,256 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
 """
-Scan Tasmanian Parliament Hansard for the current year, for BOTH Houses:
-  - House of Assembly
-  - Legislative Council
+scan_new_transcripts.py (Quick Search version)
 
-Downloads any transcripts not yet in the repository as TXT into separate
-subfolders under ./transcripts, and produces a single combined keyword digest
-(organized by House) for the new files only.
+- Opens https://www.parliament.tas.gov.au/hansard
+- Uses the on-page "Quick Search" to search by current year (e.g. 2025)
+- On the search results site, iterates result pages, and for each house:
+    * House of Assembly
+    * Legislative Council
+  finds results whose title starts with that house prefix and downloads "As Text"
+  via the built-in viewer, saving them into separate folders:
+    transcripts/House_of_Assembly/
+    transcripts/Legislative_Council/
 
-Environment (all optional):
-  WAIT_BEFORE_DOWNLOAD_SECONDS   default: 15
-  MAX_PAGES                      default: 5    (per House)
-  YEAR                           default: current year in Australia/Hobart
-
-GitHub Actions Outputs:
-  new_downloads                  total integer count across both Houses
-  digest_path                    path to combined digest file (when created)
+Environment variables (optional):
+  MAX_PAGES_PER_HOUSE            default "5"
+  WAIT_BEFORE_DOWNLOAD_SECONDS   default "15"
+  YEAR_OVERRIDE                  set a specific year (e.g. "2024") instead of current
 """
-
 import os
 import re
-import json
 import time
-import textwrap
-from pathlib import Path
+import sys
 from datetime import datetime, timezone
-from zoneinfo import ZoneInfo
+from pathlib import Path
+from typing import List, Tuple, Optional
 
 from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
 
-# ----------------- paths -----------------
 ROOT = Path(__file__).parent.resolve()
 TRANSCRIPTS_ROOT = ROOT / "transcripts"
-DIGEST_DIR = ROOT / "digests"
-KEYWORDS_FILE = ROOT / "keywords.txt"
-MANIFEST_FILE = ROOT / ".last_run_manifest.json"
-
-TRANSCRIPTS_ROOT.mkdir(exist_ok=True)
-DIGEST_DIR.mkdir(exist_ok=True)
-
-# ----------------- config -----------------
-WAIT_BEFORE_DOWNLOAD_SECONDS = int(os.getenv("WAIT_BEFORE_DOWNLOAD_SECONDS", "15"))
-MAX_PAGES = int(os.getenv("MAX_PAGES", "5"))
-
-try:
-    HOBART_NOW = datetime.now(ZoneInfo("Australia/Hobart"))
-    DEFAULT_YEAR = HOBART_NOW.year
-except Exception:
-    DEFAULT_YEAR = datetime.now().year
-
-YEAR = int(os.getenv("YEAR", str(DEFAULT_YEAR)))
-
-# Use the House-of-Assembly advanced page and override the hidden author field for each House.
-ADV_SEARCH_URL = "https://search.parliament.tas.gov.au/adv/hahansard"
-
-HOUSES = [
-    {"label": "House of Assembly", "slug": "House_of_Assembly"},
-    {"label": "Legislative Council", "slug": "Legislative_Council"},
-]
-
-# ----------------- helpers -----------------
-def house_dir(slug: str) -> Path:
-    d = TRANSCRIPTS_ROOT / slug
+HOA_DIR = TRANSCRIPTS_ROOT / "House_of_Assembly"
+LC_DIR = TRANSCRIPTS_ROOT / "Legislative_Council"
+for d in (TRANSCRIPTS_ROOT, HOA_DIR, LC_DIR):
     d.mkdir(parents=True, exist_ok=True)
-    return d
+
+MAX_PAGES_PER_HOUSE = int(os.getenv("MAX_PAGES_PER_HOUSE", "5"))
+WAIT_BEFORE_DOWNLOAD = float(os.getenv("WAIT_BEFORE_DOWNLOAD_SECONDS", "15"))
+
+def current_year() -> int:
+    y = os.getenv("YEAR_OVERRIDE")
+    if y and y.isdigit():
+        return int(y)
+    return datetime.now(timezone.utc).astimezone().year
 
 def sanitize_filename(title: str) -> str:
-    # Normalise oddities (e.g., Wednesday2 -> Wednesday 2)
-    title = re.sub(r"([A-Za-z])(\d)", r"\1 \2", title)
-    safe = re.sub(r"[^A-Za-z0-9]+", "_", title).strip("_")
-    return f"{safe}.txt"
+    s = re.sub(r"[^A-Za-z0-9._()-]+", "_", title.strip())
+    s = re.sub(r"_+", "_", s)
+    return s + ".txt"
 
-def load_keywords():
-    if not KEYWORDS_FILE.exists():
-        return []
-    return [
-        ln.strip()
-        for ln in KEYWORDS_FILE.read_text(encoding="utf-8").splitlines()
-        if ln.strip() and not ln.strip().startswith("#")
+def find_quick_search_input(page) -> Optional[str]:
+    """Try a bunch of selectors likely to be the Hansard 'Quick Search' input."""
+    candidates = [
+        "input#query",
+        "input[name='query']",
+        "input[name='keys']",
+        "input[placeholder*='Quick']",
+        "input[placeholder*='Search']",
+        "input[type='search']",
+        "#isys_edt_search",  # fallback: search site header
     ]
-
-def extract_quotes(text, keywords, context_chars=160):
-    results = []
-    for kw in keywords:
-        for m in re.finditer(re.escape(kw), text, flags=re.I):
-            start = max(0, m.start() - context_chars)
-            end = min(len(text), m.end() + context_chars)
-            snippet = text[start:end].replace("\r", "").strip()
-            results.append((kw, snippet))
-    return results
-
-def make_combined_digest(new_by_house, keywords):
-    """
-    new_by_house: dict[label] = [paths]
-    Returns digest path or None.
-    """
-    # Only build if there is at least one new file across both Houses
-    if not any(new_by_house.values()):
-        return None
-
-    now = datetime.now(timezone.utc).strftime("%Y%m%d_%H%MZ")
-    digest_path = DIGEST_DIR / f"Hansard_Keyword_Digest_{now}.txt"
-
-    lines = []
-    lines.append(f"Hansard Keyword Digest — generated {now}")
-    if keywords:
-        lines.append(f"Keywords: {', '.join(keywords)}")
-    else:
-        lines.append("(No keywords provided — showing file list only)")
-    lines.append("")
-
-    for house_label, files in new_by_house.items():
-        if not files:
-            continue
-        lines.append(f"=== {house_label} ===")
-        for fp in files:
-            p = Path(fp)
-            lines.append(f"\n--- {p.name} ---")
-            try:
-                text = p.read_text(encoding="utf-8", errors="ignore")
-            except Exception as e:
-                lines.append(f"  (could not read file: {e})")
-                continue
-            if not keywords:
-                # No keywords — just note the file
-                lines.append("  (no keywords configured)")
-                continue
-            hits = extract_quotes(text, keywords)
-            if not hits:
-                lines.append("  (no matches)")
-                continue
-            for i, (kw, quote) in enumerate(hits, 1):
-                lines.append(f"[{i}] match: {kw}")
-                for para in textwrap.wrap(quote, width=100):
-                    lines.append(f"  {para}")
-            lines.append("")  # spacer between files
-        lines.append("")      # spacer between houses
-
-    digest_path.write_text("\n".join(lines), encoding="utf-8")
-    return str(digest_path)
-
-def expose_outputs(new_count, digest_path):
-    gh_out = os.getenv("GITHUB_OUTPUT")
-    if gh_out:
-        with open(gh_out, "a") as f:
-            print(f"new_downloads={new_count}", file=f)
-            if digest_path:
-                print(f"digest_path={digest_path}", file=f)
-
-def save_manifest(new_by_house, new_count, digest_path):
-    MANIFEST_FILE.write_text(
-        json.dumps(
-            {"new_by_house": new_by_house, "new_count": new_count, "digest_path": digest_path},
-            indent=2,
-        ),
-        encoding="utf-8",
-    )
-
-# ----------------- page actions -----------------
-def open_advanced_search(page):
-    page.goto(ADV_SEARCH_URL, wait_until="domcontentloaded")
-    # Ensure at least one year checkbox is present
-    page.wait_for_selector('input[name="IW_FILTER_PATH"]', timeout=20000)
-
-def set_year_checkboxes(page, year: int):
-    # Toggle checkboxes so ONLY the current year is selected (best effort)
-    all_checks = page.locator('input[name="IW_FILTER_PATH"]')
-    count = all_checks.count()
-    for i in range(count):
-        el = all_checks.nth(i)
+    for sel in candidates:
         try:
-            v = el.get_attribute("value") or ""
-            if str(year) in v:
-                el.check()
-            else:
-                try:
-                    el.uncheck()
-                except Exception:
-                    pass
-        except Exception:
-            pass
-
-def set_house_filter(page, house_label: str):
-    # Override the hidden author filter to the desired House
-    page.evaluate(
-        """(label) => {
-            const input = document.querySelector('input[name="IW_FIELD_IN_AUTHOR"]');
-            if (input) input.value = label;
-        }""",
-        house_label,
-    )
-
-def submit_search(page):
-    # Click the visible Search button
-    page.click('#isys_btn_search')
-    page.wait_for_selector("table.results-table", timeout=20000)
-
-def iter_results_on_page(page):
-    links = page.locator('table.results-table a[href*="/doc/"]')
-    n = links.count()
-    items = []
-    for i in range(n):
-        a = links.nth(i)
-        try:
-            title = (a.inner_text(timeout=5000) or "").strip()
+            page.wait_for_selector(sel, timeout=4000, state="visible")
+            return sel
         except PWTimeout:
-            title = "Untitled"
-        items.append((title, a))
+            continue
+    return None
+
+def open_hansard_and_search(page, year: int):
+    url = "https://www.parliament.tas.gov.au/hansard"
+    print(f"Opening Hansard home… ({url})", flush=True)
+    page.goto(url, wait_until="domcontentloaded")
+    sel = find_quick_search_input(page)
+    if sel is None:
+        # Fallback: go straight to search site home which has the header search
+        url2 = "https://search.parliament.tas.gov.au/search/"
+        print(f"Quick Search not found; falling back to {url2}", flush=True)
+        page.goto(url2, wait_until="domcontentloaded")
+        sel = find_quick_search_input(page)
+        if sel is None:
+            raise RuntimeError("Could not find a search input on Hansard or Search site")
+    page.fill(sel, str(year))
+    page.keyboard.press("Enter")
+    wait_for_results(page)
+
+def wait_for_results(page):
+    """Wait until search results list is visible on 'search.parliament.tas.gov.au'"""
+    try:
+        page.wait_for_load_state("domcontentloaded", timeout=15000)
+    except PWTimeout:
+        pass
+    for sel in ["table.results-table", "a[href*='/doc/']"]:
+        try:
+            page.wait_for_selector(sel, timeout=15000, state="visible")
+            return
+        except PWTimeout:
+            continue
+    raise RuntimeError("Search results did not appear.")
+
+def collect_results_on_page(page) -> List[Tuple[str, str]]:
+    """Return list of (title_text, href) for doc entries on the current results page."""
+    items = []
+    links = page.locator("a[href*='/doc/']")
+    for i in range(links.count()):
+        a = links.nth(i)
+        title = a.inner_text(timeout=2000).strip()
+        href = a.get_attribute("href") or ""
+        if not href:
+            continue
+        title = re.sub(r"\s+", " ", title)
+        items.append((title, href))
     return items
 
-def go_next_page(page):
+def open_result_in_viewer(page, href: str):
+    if href.startswith("/"):
+        url = "https://search.parliament.tas.gov.au" + href
+    else:
+        url = href
+    page.click(f"a[href='{href}']")
+    page.wait_for_selector("#viewer_toolbar .btn.btn-download, .btn.btn-original",
+                           timeout=20000, state="visible")
+
+def download_as_text_from_viewer(page, save_path: Path) -> bool:
+    """Click Download -> 'As Text' and save. Return True if downloaded; False if failed."""
     try:
-        next_link = page.locator("#isys_var_nextbatch")
-        if next_link.count() == 0:
-            return False
-        if "disabled" in (next_link.get_attribute("disabled") or ""):
-            return False
-        next_link.click()
-        page.wait_for_selector("table.results-table", timeout=15000)
-        return True
-    except Exception:
+        print(f"   Waiting {int(WAIT_BEFORE_DOWNLOAD)}s before download…", flush=True)
+        time.sleep(WAIT_BEFORE_DOWNLOAD)
+        if page.locator("#viewer_toolbar .btn.btn-download").count():
+            page.click("#viewer_toolbar .btn.btn-download")
+            page.wait_for_selector("#viewer_toolbar_download li", timeout=15000, state="visible")
+            targets = [
+                "#viewer_toolbar_download li:has-text('As Text')",
+                "#viewer_toolbar_download li:has-text('Text')",
+            ]
+            for t in targets:
+                if page.locator(t).count():
+                    with page.expect_download(timeout=30000) as dl:
+                        page.click(t)
+                    download = dl.value
+                    download.save_as(str(save_path))
+                    return True
+            if page.locator("#viewer_toolbar_download li:has-text('As PDF')").count():
+                with page.expect_download(timeout=30000) as dl:
+                    page.click("#viewer_toolbar_download li:has-text('As PDF')")
+                download = dl.value
+                download.save_as(str(save_path.with_suffix(".pdf")))
+                return True
+        if page.locator("#viewer_toolbar .btn.btn-original").count():
+            with page.expect_download(timeout=30000) as dl:
+                page.click("#viewer_toolbar .btn.btn-original")
+            download = dl.value
+            download.save_as(str(save_path))
+            return True
+    except PWTimeout:
         return False
+    return False
 
-def download_current_document_txt(page, outfile: Path) -> bool:
-    page.wait_for_selector("#viewer_toolbar", timeout=20000)
-    # Allow viewer to fully render (PDF → HTML → toolbar wiring)
-    time.sleep(WAIT_BEFORE_DOWNLOAD_SECONDS)
-
-    page.wait_for_selector("div.btn.btn-download", timeout=15000)
-    page.click("div.btn.btn-download")
-
-    page.wait_for_selector("#viewer_toolbar_download", timeout=15000)
-    with page.expect_download(timeout=60000) as d_info:
-        page.click('#viewer_toolbar_download li:has-text("As Text")')
-    d = d_info.value
-    d.save_as(str(outfile))
-    return True
-
-def close_viewer(page):
-    try:
-        page.click("div.btn.btn-close", timeout=5000)
-    except Exception:
+def close_viewer_if_open(page):
+    if page.locator("#viewer_toolbar .btn.btn-close").count():
         try:
-            page.keyboard.press("Escape")
-        except Exception:
+            page.click("#viewer_toolbar .btn.btn-close")
+            page.wait_for_selector("#viewer_toolbar", state="hidden", timeout=5000)
+        except PWTimeout:
             pass
 
-# ----------------- main -----------------
-def main():
-    new_by_house = {h["label"]: [] for h in HOUSES}
-    total_new = 0
+def next_results_page(page) -> bool:
+    """Click 'Next >' if present; return True if navigated, False if no more."""
+    if page.locator("#isys_var_nextbatch").count():
+        page.click("#isys_var_nextbatch")
+        wait_for_results(page)
+        return True
+    locator = page.locator("a:has-text('Next')")
+    if locator.count():
+        locator.first.click()
+        wait_for_results(page)
+        return True
+    return False
 
-    print(f"Year = {YEAR}")
-    print(f"Max pages per House = {MAX_PAGES}")
-    print(f"Transcripts root = {TRANSCRIPTS_ROOT}")
+def scan_house(page, house_prefix: str, dest_dir: Path) -> List[Path]:
+    """Iterate pages, download missing items for a given House. Returns new files saved."""
+    saved: List[Path] = []
+    page_num = 1
+    print(f"Scanning results page {page_num}…", flush=True)
+    while True:
+        items = collect_results_on_page(page)
+        house_items = [(t, h) for (t, h) in items if t.startswith(house_prefix)]
+        for title, href in house_items:
+            basename = sanitize_filename(title)
+            out_path = dest_dir / basename
+            if out_path.exists():
+                continue
+            print(f"→ Opening: {title}", flush=True)
+            open_result_in_viewer(page, href)
+            ok = download_as_text_from_viewer(page, out_path)
+            close_viewer_if_open(page)
+            if ok and out_path.exists():
+                print(f"   ✅ Saved: {out_path.name}", flush=True)
+                saved.append(out_path)
+            else:
+                print(f"   ⚠️  Failed to download: {title}", flush=True)
+        if page_num >= MAX_PAGES_PER_HOUSE:
+            break
+        if not next_results_page(page):
+            break
+        page_num += 1
+        print(f"Scanning results page {page_num}…", flush=True)
+    return saved
+
+def main():
+    year = current_year()
+    print(f"Year = {year}", flush=True)
+    print(f"Max pages per House = {MAX_PAGES_PER_HOUSE}", flush=True)
+    print(f"Transcripts root = {TRANSCRIPTS_ROOT}", flush=True)
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
-        context = browser.new_context(accept_downloads=True)
-        page = context.new_page()
+        ctx = browser.new_context(accept_downloads=True)
+        page = ctx.new_page()
 
-        for house in HOUSES:
-            label = house["label"]
-            slug = house["slug"]
-            outdir = house_dir(slug)
+        # Start from Hansard + Quick Search
+        open_hansard_and_search(page, year)
 
-            print(f"\n=== {label} ===")
-            print(f"Opening Advanced Search… ({ADV_SEARCH_URL})")
-            open_advanced_search(page)
-            set_year_checkboxes(page, YEAR)
-            set_house_filter(page, label)
-            submit_search(page)
+        # Scan House of Assembly first
+        print("=== House of Assembly ===", flush=True)
+        new_hoa = scan_house(page, "House of Assembly", HOA_DIR)
 
-            for page_idx in range(1, MAX_PAGES + 1):
-                print(f"Scanning results page {page_idx}…")
-                items = iter_results_on_page(page)
-                if not items:
-                    print("No results on this page.")
-                    break
+        # Return to first results page by searching again
+        open_hansard_and_search(page, year)
 
-                for title, link in items:
-                    # Guard: ensure title references this House (usually does)
-                    if label not in title:
-                        # Be conservative: skip cross-house noise
-                        continue
+        # Scan Legislative Council
+        print("=== Legislative Council ===", flush=True)
+        new_lc = scan_house(page, "Legislative Council", LC_DIR)
 
-                    outfile = outdir / sanitize_filename(title)
-                    if outfile.exists():
-                        continue
+        total = len(new_hoa) + len(new_lc)
+        print(f"Done. New downloads this run: {total}", flush=True)
 
-                    print(f"→ Opening: {title}")
-                    try:
-                        link.click()
-                        ok = download_current_document_txt(page, outfile)
-                        if ok:
-                            print(f"   ✅ Saved: {outfile.name}")
-                            new_by_house[label].append(str(outfile))
-                            total_new += 1
-                        else:
-                            print("   ⚠️  Download did not complete.")
-                    except PWTimeout:
-                        print("   ⚠️  Timed out opening/downloading; skipping.")
-                    except Exception as e:
-                        print(f"   ⚠️  Error: {e}")
-                    finally:
-                        close_viewer(page)
+        summary = ROOT / "scan_summary.txt"
+        lines = []
+        if new_hoa:
+            lines.append("[House of Assembly]")
+            lines += [f"- {p.name}" for p in new_hoa]
+        if new_lc:
+            lines.append("[Legislative Council]")
+            lines += [f"- {p.name}" for p in new_lc]
+        summary.write_text("\n".join(lines), encoding="utf-8")
 
-                if page_idx >= MAX_PAGES:
-                    break
-                if not go_next_page(page):
-                    break
-
-        context.close()
+        ctx.close()
         browser.close()
 
-    # Build combined digest (one file, with sections per House)
-    keywords = load_keywords()
-    digest_path = make_combined_digest(new_by_house, keywords)
-
-    # Persist manifest & expose outputs
-    save_manifest(new_by_house, total_new, digest_path)
-    expose_outputs(total_new, digest_path)
-
-    print(f"\nDone. New downloads this run: {total_new}")
-    if digest_path:
-        print(f"Digest: {digest_path}")
-
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        print(f"ERROR: {e}", file=sys.stderr, flush=True)
+        sys.exit(1)
