@@ -52,3 +52,11 @@ jobs:
           EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
           EMAIL_TO:   ${{ secrets.EMAIL_TO }}
         run: python send_email.py
+
+      - name: Commit sent log
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add sent.log || echo "No log"
+          git commit -m "Update sent log (auto)" || echo "No changes"
+          git push
