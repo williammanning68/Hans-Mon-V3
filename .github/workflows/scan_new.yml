@@ -34,7 +34,10 @@ jobs:
       - name: Scan & download any new transcripts for current year
         env:
           WAIT_BEFORE_DOWNLOAD_SECONDS: "15"
-          MAX_PAGES: "1"
+          MAX_PAGES: "5"
+          # Set to only fetch House of Assembly items
+          HOUSE_PREFIX: "House of Assembly"
+        run: python scan_new_transcripts.py
 
       - name: Commit new transcripts (if any)
         run: |
