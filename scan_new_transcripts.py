@@ -60,7 +60,9 @@ def download_current_year_new():
                 break
 
             # Title links (avoid green DOCX link)
-            result_links = page.locator('td.resultColumnB a[href*="/doc/"]')
+            result_links = page.locator(
+                "td.resultColumnB a[href*='/doc/']:not(:has-text('Download Document'))"
+            )
             count = result_links.count()
             if count == 0:
                 print("No result links found.")
@@ -75,10 +77,23 @@ def download_current_year_new():
                     continue
 
                 print(f"→ Opening: {title}")
-                link.click()
+                try:
+                    with page.expect_download(timeout=5000) as dl:
+                        link.click()
+                    download = dl.value
+                    download.save_as(str(out_path))
+                    print(f"   ✅ Saved: {out_path.name}")
+                    total_downloaded += 1
+                    continue
+                except PWTimeout:
+                    pass
 
                 # Viewer toolbar overlay
-                page.wait_for_selector('#viewer_toolbar', timeout=60000)
+                try:
+                    page.wait_for_selector('#viewer_toolbar', timeout=60000)
+                except PWTimeout:
+                    print("   ❌ Viewer toolbar not found; skipping.")
+                    continue
 
                 # Safety delay
                 print(f"   Waiting {WAIT_BEFORE_DOWNLOAD}s before download…")
