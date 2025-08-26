@@ -13,7 +13,7 @@ LOG_FILE = Path("sent.log")
 # Regexes for speaker detection and headings
 SPEAKER_RE = re.compile(
     r"^((?:The\s+)?(?:Mr|Ms|Mrs|Dr|Hon|Sir|Madam|Premier|Treasurer|Attorney-General|Leader)\s+"
-    r"[A-Z][A-Za-z’'\-]+(?:\s+[A-Z][A-Za-z’'\-]+)*(?:\s*\([^)]+\))?)\s*-\s",
+    r"[A-Z][A-Za-z’'\-]+(?:\s+[A-Z][A-Za-z’'\-]+)*(?:\s*\([^)]+\))?)\s*-\s*",
 )
 HEADING_RE = re.compile(r"^[A-Z0-9 ,’'()\-.:]{6,}$")
 
