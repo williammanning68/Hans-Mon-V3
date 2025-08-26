@@ -1,10 +1,11 @@
 # general
 pokies
 player card
-money laundering
+laundering
 precommitment card
-budget
+
 
 # specific phrases (exact)
 "cashless gaming"
 "harm minimisation"
+"EGM"
