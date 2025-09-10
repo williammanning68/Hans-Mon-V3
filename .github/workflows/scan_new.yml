@@ -1,24 +1,24 @@
 name: Scan new Hansard transcripts (by current year)
 
-on:
+# on:
   # Run manually when you want to test
-  workflow_dispatch: {}
+#  workflow_dispatch: {}
   # Run daily 5pm Hobart (AEST=UTC+10 → 07:00 UTC). Adjust as needed.
-  schedule:
-    - cron: "0 7 * * *"
+#  schedule:
+#    - cron: "0 7 * * *"
 
-permissions:
-  contents: write
+#permissions:
+#  contents: write
 
 concurrency:
-  group: hansard-scan
+#  group: hansard-scan
   cancel-in-progress: false
 
 jobs:
   scan:
-    runs-on: ubuntu-latest
+#    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+#      - uses: actions/checkout@v4
 
       - uses: actions/setup-python@v5
         with:
